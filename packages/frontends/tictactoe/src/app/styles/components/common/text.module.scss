@@ -1,23 +1,23 @@
-main.root {
+p.root {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   background: var(--background);
+  border: none;
   color: var(--color);
-  display: grid;
   font-family: var(--family);
-  font-size: var(--size);
+  font-size: 1.6rem;
   font-synthesis: none;
   font-weight: 400;
-  grid-column: 1;
-  grid-row: 2;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
   height: 100%;
   line-height: 1.5;
   margin: 0;
+  outline: none;
   padding: 0;
   text-rendering: optimizeLegibility;
   width: 100%;
-  z-index: 0;
+
+  &:hover {
+    cursor: default;
+  }
 }

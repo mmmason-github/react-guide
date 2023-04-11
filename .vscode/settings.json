@@ -35,7 +35,7 @@
   "editor.insertSpaces": true,
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
-  "editor.rulers": [ 80, 120 ],
+  "editor.rulers": [ 80 ],
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": false,
 
@@ -102,13 +102,13 @@
     "**/packages/backends/weather": true,
 
     // Frontends
-    "**/packages/frontends/": true,
+    "**/packages/frontends/": false,
     "**/packages/frontends/authenticator": true,
     "**/packages/frontends/natours": true,
     "**/packages/frontends/nexter": true,
     "**/packages/frontends/stumble": true,
     "**/packages/frontends/tetris": true,
-    "**/packages/frontends/tictactoe": true,
+    "**/packages/frontends/tictactoe": false,
     "**/packages/frontends/todo": true,
     "**/packages/frontends/trillo": true,
     "**/packages/frontends/weather": true,
@@ -147,7 +147,7 @@
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 120,
+    "editor.wordWrapColumn": 80,
   },
   "javascript.format.enable": true,
 
@@ -188,7 +188,7 @@
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 120,
+    "editor.wordWrapColumn": 80,
   },
   "typescript.format.enable": true,
 
@@ -211,7 +211,7 @@
   "css.lint.float": "error",
   "css.lint.fontFaceProperties": "error",
   "css.lint.hexColorLength": "error",
-  "css.lint.idSelector": "error",
+  "css.lint.idSelector": "ignore",
   "css.lint.ieHack": "error",
   "css.lint.importStatement": "error",
   "css.lint.important": "error",
@@ -322,7 +322,7 @@
   "scss.lint.float": "error",
   "scss.lint.fontFaceProperties": "error",
   "scss.lint.hexColorLength": "error",
-  "scss.lint.idSelector": "error",
+  "scss.lint.idSelector": "ignore",
   "scss.lint.ieHack": "error",
   "scss.lint.importStatement": "error",
   "scss.lint.important": "error",

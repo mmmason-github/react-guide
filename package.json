@@ -87,20 +87,20 @@
   "name": "react-guide",
   "private": true,
   "scripts": {
-    "authenticator": "nx run-many --target=serve --projects=backend-authenticator,frontend-authenticator",
+    "authenticator": "nx run-many --target=serve --projects=backends-authenticator, frontends-authenticator",
     "build": "nx run-many --target=build --all=true",
     "clean": "rm -rf ./dist/ ./node_modules/",
     "construct": "npm install && npm run build",
     "lint": "nx run-many --target=lint --all=true",
-    "natours": "nx run-many --target=serve --projects=backend-natours,frontend-natours",
-    "nexter": "nx run-many --target=serve --projects=backend-nexter,frontend-nexter",
-    "stumble": "nx run-many --target=serve --projects=backend-stumble,frontend-stumble",
+    "natours": "nx run-many --target=serve --projects=backends-natours, frontends-natours",
+    "nexter": "nx run-many --target=serve --projects=backends-nexter, frontends-nexter",
+    "stumble": "nx run-many --target=serve --projects=backends-stumble, frontends-stumble",
     "test": "nx run-many --target=test --all=true",
-    "tetris": "nx run-many --target=serve --projects=backend-tetris,frontend-tetris",
-    "tictactoe": "nx run-many --target=serve --projects=backend-tictactoe,frontend-tictactoe",
-    "todo": "nx run-many --target=serve --projects=backend-todo,frontend-todo",
-    "trillo": "nx run-many --target=serve --projects=backend-trillo,frontend-trillo",
-    "weather": "nx run-many --target=serve --projects=backend-weather,frontend-weather"
+    "tetris": "nx run-many --target=serve --projects=backends-tetris, frontends-tetris",
+    "tictactoe": "nx run-many --target=serve --projects=backends-tictactoe, frontends-tictactoe",
+    "todo": "nx run-many --target=serve --projects=backends-todo, frontends-todo",
+    "trillo": "nx run-many --target=serve --projects=backends-trillo, frontends-trillo",
+    "weather": "nx run-many --target=serve --projects=backends-weather, frontends-weather"
   },
   "version": "0.0.0"
 }

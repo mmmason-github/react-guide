@@ -1,4 +1,4 @@
-main.root {
+section.root {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -10,7 +10,7 @@ main.root {
   font-synthesis: none;
   font-weight: 400;
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 1;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   height: 100%;
