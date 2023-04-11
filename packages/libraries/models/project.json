@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "libraries-models",
+  "projectType": "library",
+  "sourceRoot": "packages/libraries/models/src",
+  "tags": [ ],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "assets": [
+          "packages/libraries/models/*.md"
+        ],
+        "main": "packages/libraries/models/src/index.ts",
+        "outputPath": "dist/packages/libraries/models",
+        "tsConfig": "packages/libraries/models/tsconfig.lib.json"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/libraries/models/**/*.ts"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "test": {
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      },
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/libraries/models/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ]
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "backends-tictactoe",
+  "projectType": "application",
+  "sourceRoot": "packages/backends/tictactoe/src",
+  "tags": [ ],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": { },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/backends/tictactoe/src/environments/environment.dev.ts",
+              "with": "packages/backends/tictactoe/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [ ],
+        "compiler": "tsc",
+        "isolatedConfig": true,
+        "main": "packages/backends/tictactoe/src/main.ts",
+        "outputPath": "dist/packages/backends/tictactoe",
+        "target": "node",
+        "tsConfig": "packages/backends/tictactoe/tsconfig.app.json",
+        "webpackConfig": "packages/backends/tictactoe/webpack.config.js"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/backends/tictactoe/**/*.ts"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "backends-tictactoe:build:development"
+        },
+        "production": {
+          "buildTarget": "backends-tictactoe:build:production"
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "backends-tictactoe:build"
+      }
+    }
+  }
+}

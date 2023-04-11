@@ -1,0 +1,84 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "frontends-todo",
+  "projectType": "application",
+  "sourceRoot": "packages/frontends/todo/src",
+  "tags": [ ],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "extractLicenses": true,
+          "fileReplacements": [
+            {
+              "replace": "packages/frontends/todo/src/environments/environment.dev.ts",
+              "with": "packages/frontends/todo/src/environments/environment.prod.ts"
+            }
+          ],
+          "namedChunks": false,
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "vendorChunk": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [
+          "packages/frontends/todo/src/favicon.ico"
+        ],
+        "baseHref": "/",
+        "compiler": "babel",
+        "index": "packages/frontends/todo/src/index.html",
+        "isolatedConfig": true,
+        "main": "packages/frontends/todo/src/main.tsx",
+        "outputPath": "dist/packages/frontends/todo",
+        "scripts": [ ],
+        "styles": [
+          "packages/frontends/todo/src/app/styles/globals.scss"
+        ],
+        "tsConfig": "packages/frontends/todo/tsconfig.app.json",
+        "webpackConfig": "packages/frontends/todo/webpack.config.js"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontends/todo/**/*.{ts,tsx,js,jsx}"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "frontends-todo:build:development"
+        },
+        "production": {
+          "buildTarget": "frontends-todo:build:production",
+          "hmr": false
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/webpack:dev-server",
+      "options": {
+        "buildTarget": "frontends-todo:build",
+        "hmr": true,
+        "proxyConfig": "packages/frontends/todo/proxy.conf.json"
+      }
+    }
+  }
+}

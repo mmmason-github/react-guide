@@ -1,0 +1,84 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "frontends-nexter",
+  "projectType": "application",
+  "sourceRoot": "packages/frontends/nexter/src",
+  "tags": [ ],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "extractLicenses": true,
+          "fileReplacements": [
+            {
+              "replace": "packages/frontends/nexter/src/environments/environment.dev.ts",
+              "with": "packages/frontends/nexter/src/environments/environment.prod.ts"
+            }
+          ],
+          "namedChunks": false,
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "vendorChunk": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [
+          "packages/frontends/nexter/src/favicon.ico"
+        ],
+        "baseHref": "/",
+        "compiler": "babel",
+        "index": "packages/frontends/nexter/src/index.html",
+        "isolatedConfig": true,
+        "main": "packages/frontends/nexter/src/main.tsx",
+        "outputPath": "dist/packages/frontends/nexter",
+        "scripts": [ ],
+        "styles": [
+          "packages/frontends/nexter/src/app/styles/globals.scss"
+        ],
+        "tsConfig": "packages/frontends/nexter/tsconfig.app.json",
+        "webpackConfig": "packages/frontends/nexter/webpack.config.js"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontends/nexter/**/*.{ts,tsx,js,jsx}"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "frontends-nexter:build:development"
+        },
+        "production": {
+          "buildTarget": "frontends-nexter:build:production",
+          "hmr": false
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/webpack:dev-server",
+      "options": {
+        "buildTarget": "frontends-nexter:build",
+        "hmr": true,
+        "proxyConfig": "packages/frontends/nexter/proxy.conf.json"
+      }
+    }
+  }
+}

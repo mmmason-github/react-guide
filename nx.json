@@ -1,20 +1,39 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "react-guide",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/nx-cloud",
-      "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
-        "accessToken": "ODk1NjVkYmMtZWU5ZC00MDM2LWI5Y2ItMGI4NDVjMDNlYmEzfHJlYWQtd3JpdGU="
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true,
+        "bundler": "webpack",
+        "linter": "eslint",
+        "style": "scss"
+      },
+      "component": {
+        "style": "scss"
+      },
+      "library": {
+        "linter": "eslint",
+        "style": "scss"
       }
     }
   },
+  "namedInputs": {
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/.eslintrc.json"
+    ],
+    "sharedGlobals": [
+      "{workspaceRoot}/babel.config.json"
+    ]
+  },
+  "npmScope": "react-guide",
   "targetDefaults": {
     "build": {
       "dependsOn": [
@@ -24,17 +43,41 @@
         "production",
         "^production"
       ]
+    },
+    "e2e": {
+      "inputs": [
+        "default",
+        "^production"
+      ]
+    },
+    "lint": {
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore"
+      ]
+    },
+    "test": {
+      "inputs": [
+        "default",
+        "^production",
+        "{workspaceRoot}/jest.preset.js"
+      ]
     }
   },
-  "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
-    "production": [
-      "default"
-    ],
-    "sharedGlobals": []
+  "tasksRunnerOptions": {
+    "default": {
+      "options": {
+        "accessToken": "ODk1NjVkYmMtZWU5ZC00MDM2LWI5Y2ItMGI4NDVjMDNlYmEzfHJlYWQtd3JpdGU=",
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
+      },
+      "runner": "@nrwl/nx-cloud"
+    }
   },
   "workspaceLayout": {
     "appsDir": "packages",

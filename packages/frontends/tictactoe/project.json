@@ -1,0 +1,84 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "frontends-tictactoe",
+  "projectType": "application",
+  "sourceRoot": "packages/frontends/tictactoe/src",
+  "tags": [ ],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "extractLicenses": true,
+          "fileReplacements": [
+            {
+              "replace": "packages/frontends/tictactoe/src/environments/environment.dev.ts",
+              "with": "packages/frontends/tictactoe/src/environments/environment.prod.ts"
+            }
+          ],
+          "namedChunks": false,
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "vendorChunk": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [
+          "packages/frontends/tictactoe/src/favicon.ico"
+        ],
+        "baseHref": "/",
+        "compiler": "babel",
+        "index": "packages/frontends/tictactoe/src/index.html",
+        "isolatedConfig": true,
+        "main": "packages/frontends/tictactoe/src/main.tsx",
+        "outputPath": "dist/packages/frontends/tictactoe",
+        "scripts": [ ],
+        "styles": [
+          "packages/frontends/tictactoe/src/app/styles/globals.scss"
+        ],
+        "tsConfig": "packages/frontends/tictactoe/tsconfig.app.json",
+        "webpackConfig": "packages/frontends/tictactoe/webpack.config.js"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontends/tictactoe/**/*.{ts,tsx,js,jsx}"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "frontends-tictactoe:build:development"
+        },
+        "production": {
+          "buildTarget": "frontends-tictactoe:build:production",
+          "hmr": false
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/webpack:dev-server",
+      "options": {
+        "buildTarget": "frontends-tictactoe:build",
+        "hmr": true,
+        "proxyConfig": "packages/frontends/tictactoe/proxy.conf.json"
+      }
+    }
+  }
+}

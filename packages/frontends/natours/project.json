@@ -1,0 +1,84 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "frontends-natours",
+  "projectType": "application",
+  "sourceRoot": "packages/frontends/natours/src",
+  "tags": [ ],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "extractLicenses": true,
+          "fileReplacements": [
+            {
+              "replace": "packages/frontends/natours/src/environments/environment.dev.ts",
+              "with": "packages/frontends/natours/src/environments/environment.prod.ts"
+            }
+          ],
+          "namedChunks": false,
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "vendorChunk": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [
+          "packages/frontends/natours/src/favicon.ico"
+        ],
+        "baseHref": "/",
+        "compiler": "babel",
+        "index": "packages/frontends/natours/src/index.html",
+        "isolatedConfig": true,
+        "main": "packages/frontends/natours/src/main.tsx",
+        "outputPath": "dist/packages/frontends/natours",
+        "scripts": [ ],
+        "styles": [
+          "packages/frontends/natours/src/app/styles/globals.scss"
+        ],
+        "tsConfig": "packages/frontends/natours/tsconfig.app.json",
+        "webpackConfig": "packages/frontends/natours/webpack.config.js"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontends/natours/**/*.{ts,tsx,js,jsx}"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "frontends-natours:build:development"
+        },
+        "production": {
+          "buildTarget": "frontends-natours:build:production",
+          "hmr": false
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/webpack:dev-server",
+      "options": {
+        "buildTarget": "frontends-natours:build",
+        "hmr": true,
+        "proxyConfig": "packages/frontends/natours/proxy.conf.json"
+      }
+    }
+  }
+}

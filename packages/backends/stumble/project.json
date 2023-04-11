@@ -1,0 +1,63 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "backends-stumble",
+  "projectType": "application",
+  "sourceRoot": "packages/backends/stumble/src",
+  "tags": [ ],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": { },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/backends/stumble/src/environments/environment.dev.ts",
+              "with": "packages/backends/stumble/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [ ],
+        "compiler": "tsc",
+        "isolatedConfig": true,
+        "main": "packages/backends/stumble/src/main.ts",
+        "outputPath": "dist/packages/backends/stumble",
+        "target": "node",
+        "tsConfig": "packages/backends/stumble/tsconfig.app.json",
+        "webpackConfig": "packages/backends/stumble/webpack.config.js"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/backends/stumble/**/*.ts"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "backends-stumble:build:development"
+        },
+        "production": {
+          "buildTarget": "backends-stumble:build:production"
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "backends-stumble:build"
+      }
+    }
+  }
+}

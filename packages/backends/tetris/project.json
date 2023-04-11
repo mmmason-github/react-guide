@@ -1,0 +1,63 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "backends-tetris",
+  "projectType": "application",
+  "sourceRoot": "packages/backends/tetris/src",
+  "tags": [ ],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": { },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/backends/tetris/src/environments/environment.dev.ts",
+              "with": "packages/backends/tetris/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [ ],
+        "compiler": "tsc",
+        "isolatedConfig": true,
+        "main": "packages/backends/tetris/src/main.ts",
+        "outputPath": "dist/packages/backends/tetris",
+        "target": "node",
+        "tsConfig": "packages/backends/tetris/tsconfig.app.json",
+        "webpackConfig": "packages/backends/tetris/webpack.config.js"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/backends/tetris/**/*.ts"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "backends-tetris:build:development"
+        },
+        "production": {
+          "buildTarget": "backends-tetris:build:production"
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "backends-tetris:build"
+      }
+    }
+  }
+}

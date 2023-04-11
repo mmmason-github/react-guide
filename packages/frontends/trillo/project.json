@@ -1,0 +1,84 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "frontends-trillo",
+  "projectType": "application",
+  "sourceRoot": "packages/frontends/trillo/src",
+  "tags": [ ],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "extractLicenses": true,
+          "fileReplacements": [
+            {
+              "replace": "packages/frontends/trillo/src/environments/environment.dev.ts",
+              "with": "packages/frontends/trillo/src/environments/environment.prod.ts"
+            }
+          ],
+          "namedChunks": false,
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "vendorChunk": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [
+          "packages/frontends/trillo/src/favicon.ico"
+        ],
+        "baseHref": "/",
+        "compiler": "babel",
+        "index": "packages/frontends/trillo/src/index.html",
+        "isolatedConfig": true,
+        "main": "packages/frontends/trillo/src/main.tsx",
+        "outputPath": "dist/packages/frontends/trillo",
+        "scripts": [ ],
+        "styles": [
+          "packages/frontends/trillo/src/app/styles/globals.scss"
+        ],
+        "tsConfig": "packages/frontends/trillo/tsconfig.app.json",
+        "webpackConfig": "packages/frontends/trillo/webpack.config.js"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontends/trillo/**/*.{ts,tsx,js,jsx}"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "frontends-trillo:build:development"
+        },
+        "production": {
+          "buildTarget": "frontends-trillo:build:production",
+          "hmr": false
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/webpack:dev-server",
+      "options": {
+        "buildTarget": "frontends-trillo:build",
+        "hmr": true,
+        "proxyConfig": "packages/frontends/trillo/proxy.conf.json"
+      }
+    }
+  }
+}

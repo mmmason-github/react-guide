@@ -1,0 +1,84 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "frontends-tetris",
+  "projectType": "application",
+  "sourceRoot": "packages/frontends/tetris/src",
+  "tags": [ ],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "extractLicenses": true,
+          "fileReplacements": [
+            {
+              "replace": "packages/frontends/tetris/src/environments/environment.dev.ts",
+              "with": "packages/frontends/tetris/src/environments/environment.prod.ts"
+            }
+          ],
+          "namedChunks": false,
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "vendorChunk": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [
+          "packages/frontends/tetris/src/favicon.ico"
+        ],
+        "baseHref": "/",
+        "compiler": "babel",
+        "index": "packages/frontends/tetris/src/index.html",
+        "isolatedConfig": true,
+        "main": "packages/frontends/tetris/src/main.tsx",
+        "outputPath": "dist/packages/frontends/tetris",
+        "scripts": [ ],
+        "styles": [
+          "packages/frontends/tetris/src/app/styles/globals.scss"
+        ],
+        "tsConfig": "packages/frontends/tetris/tsconfig.app.json",
+        "webpackConfig": "packages/frontends/tetris/webpack.config.js"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontends/tetris/**/*.{ts,tsx,js,jsx}"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "frontends-tetris:build:development"
+        },
+        "production": {
+          "buildTarget": "frontends-tetris:build:production",
+          "hmr": false
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/webpack:dev-server",
+      "options": {
+        "buildTarget": "frontends-tetris:build",
+        "hmr": true,
+        "proxyConfig": "packages/frontends/tetris/proxy.conf.json"
+      }
+    }
+  }
+}

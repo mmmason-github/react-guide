@@ -1,0 +1,84 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "frontends-weather",
+  "projectType": "application",
+  "sourceRoot": "packages/frontends/weather/src",
+  "tags": [ ],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "extractLicenses": true,
+          "fileReplacements": [
+            {
+              "replace": "packages/frontends/weather/src/environments/environment.dev.ts",
+              "with": "packages/frontends/weather/src/environments/environment.prod.ts"
+            }
+          ],
+          "namedChunks": false,
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "vendorChunk": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [
+          "packages/frontends/weather/src/favicon.ico"
+        ],
+        "baseHref": "/",
+        "compiler": "babel",
+        "index": "packages/frontends/weather/src/index.html",
+        "isolatedConfig": true,
+        "main": "packages/frontends/weather/src/main.tsx",
+        "outputPath": "dist/packages/frontends/weather",
+        "scripts": [ ],
+        "styles": [
+          "packages/frontends/weather/src/app/styles/globals.scss"
+        ],
+        "tsConfig": "packages/frontends/weather/tsconfig.app.json",
+        "webpackConfig": "packages/frontends/weather/webpack.config.js"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontends/weather/**/*.{ts,tsx,js,jsx}"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "frontends-weather:build:development"
+        },
+        "production": {
+          "buildTarget": "frontends-weather:build:production",
+          "hmr": false
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/webpack:dev-server",
+      "options": {
+        "buildTarget": "frontends-weather:build",
+        "hmr": true,
+        "proxyConfig": "packages/frontends/weather/proxy.conf.json"
+      }
+    }
+  }
+}

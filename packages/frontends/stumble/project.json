@@ -1,0 +1,84 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "frontends-stumble",
+  "projectType": "application",
+  "sourceRoot": "packages/frontends/stumble/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "extractLicenses": true,
+          "fileReplacements": [
+            {
+              "replace": "packages/frontends/stumble/src/environments/environment.dev.ts",
+              "with": "packages/frontends/stumble/src/environments/environment.prod.ts"
+            }
+          ],
+          "namedChunks": false,
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "vendorChunk": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [
+          "packages/frontends/stumble/src/favicon.ico"
+        ],
+        "baseHref": "/",
+        "compiler": "babel",
+        "index": "packages/frontends/stumble/src/index.html",
+        "isolatedConfig": true,
+        "main": "packages/frontends/stumble/src/main.tsx",
+        "outputPath": "dist/packages/frontends/stumble",
+        "scripts": [],
+        "styles": [
+          "packages/frontends/stumble/src/app/styles/globals.scss"
+        ],
+        "tsConfig": "packages/frontends/stumble/tsconfig.app.json",
+        "webpackConfig": "packages/frontends/stumble/webpack.config.js"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontends/stumble/**/*.{ts,tsx,js,jsx}"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "frontends-stumble:build:development"
+        },
+        "production": {
+          "buildTarget": "frontends-stumble:build:production",
+          "hmr": false
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/webpack:dev-server",
+      "options": {
+        "buildTarget": "frontends-stumble:build",
+        "hmr": true,
+        "proxyConfig": "packages/frontends/stumble/proxy.conf.json"
+      }
+    }
+  }
+}

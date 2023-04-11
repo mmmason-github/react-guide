@@ -1,0 +1,84 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "frontends-authenticator",
+  "projectType": "application",
+  "sourceRoot": "packages/frontends/authenticator/src",
+  "tags": [ ],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "extractLicenses": true,
+          "fileReplacements": [
+            {
+              "replace": "packages/frontends/authenticator/src/environments/environment.dev.ts",
+              "with": "packages/frontends/authenticator/src/environments/environment.prod.ts"
+            }
+          ],
+          "namedChunks": false,
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "vendorChunk": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [
+          "packages/frontends/authenticator/src/favicon.ico"
+        ],
+        "baseHref": "/",
+        "compiler": "babel",
+        "index": "packages/frontends/authenticator/src/index.html",
+        "isolatedConfig": true,
+        "main": "packages/frontends/authenticator/src/main.tsx",
+        "outputPath": "dist/packages/frontends/authenticator",
+        "scripts": [ ],
+        "styles": [
+          "packages/frontends/authenticator/src/app/styles/globals.scss"
+        ],
+        "tsConfig": "packages/frontends/authenticator/tsconfig.app.json",
+        "webpackConfig": "packages/frontends/authenticator/webpack.config.js"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontends/authenticator/**/*.{ts,tsx,js,jsx}"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "frontends-authenticator:build:development"
+        },
+        "production": {
+          "buildTarget": "frontends-authenticator:build:production",
+          "hmr": false
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/webpack:dev-server",
+      "options": {
+        "buildTarget": "frontends-authenticator:build",
+        "hmr": true,
+        "proxyConfig": "packages/frontends/authenticator/proxy.conf.json"
+      }
+    }
+  }
+}
