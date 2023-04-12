@@ -3,7 +3,7 @@ import Form, { Inputs } from "../components/common/form";
 import styles from "../styles/pages/register.module.scss";
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
-const RegisterPage = (): JSX.Element => {
+export default function RegisterPage(): JSX.Element {
   const inputs: Inputs[] = [
     {
       id: "email",
@@ -12,14 +12,14 @@ const RegisterPage = (): JSX.Element => {
       type: "email"
     },
     {
-      id: "firstName",
-      name: "firstName",
+      id: "first",
+      name: "first",
       text: "First name",
       type: "text"
     },
     {
-      id: "lastName",
-      name: "lastName",
+      id: "last",
+      name: "last",
       text: "Last name",
       type: "text"
     },
@@ -35,5 +35,4 @@ const RegisterPage = (): JSX.Element => {
       <Form inputs={inputs} value="Register" />
     </section>
   );
-};
-export default RegisterPage;
+}

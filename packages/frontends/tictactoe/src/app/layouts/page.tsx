@@ -1,25 +1,24 @@
-import { Fragment, useEffect } from "react";
+import { useEffect } from "react";
 
 import Footer from "../components/common/footer";
 import Header from "../components/common/header";
 import Main from "../components/common/main";
 
-const FONTSIZES: [number, number] = [10, 20];
-const WIDTHSIZES: [number, number] = [320, 3820];
-const FONT: number = FONTSIZES[1] - FONTSIZES[0];
-const WIDTH: number = WIDTHSIZES[1] - WIDTHSIZES[0];
-const SLOPE: number = FONT / WIDTH;
-const INTERCEPT: number = FONTSIZES[0] - SLOPE * WIDTHSIZES[0];
+const fontSize: [number, number] = [10, 20];
+const widthSize: [number, number] = [320, 3820];
+const font: number = fontSize[1] - widthSize[0];
+const width: number = widthSize[1] - widthSize[0];
+const slope: number = font / width;
+const intercept: number = fontSize[0] - slope * widthSize[0];
 
 const handleResize = (): void => {
   window.document.documentElement.style.setProperty(
     "--size",
-    `${SLOPE * window.innerWidth + INTERCEPT}px`
+    `${slope * window.innerWidth + intercept}px`
   );
 };
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-const PageLayout = (): JSX.Element => {
+export default function PageLayout(): JSX.Element {
   handleResize();
 
   useEffect(function effect(): void {
@@ -27,11 +26,10 @@ const PageLayout = (): JSX.Element => {
   });
 
   return (
-    <Fragment>
+    <>
       <Header />
       <Main />
       <Footer />
-    </Fragment>
+    </>
   );
-};
-export default PageLayout;
+}

@@ -4,8 +4,6 @@ type Props = {
   children: string;
 };
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-const Text = (props: Props): JSX.Element => {
-  return <p className={styles.root}>{props.children}</p>;
-};
-export default Text;
+export default function Text({ children }: Props): JSX.Element {
+  return <p className={styles.root}>{children}</p>;
+}

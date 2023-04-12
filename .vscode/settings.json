@@ -90,13 +90,13 @@
     // Current Projects
 
     // Backends
-    "**/packages/backends/": true,
+    "**/packages/backends/": false,
     "**/packages/backends/authenticator": true,
     "**/packages/backends/natours": true,
     "**/packages/backends/nexter": true,
     "**/packages/backends/stumble": true,
     "**/packages/backends/tetris": true,
-    "**/packages/backends/tictactoe": true,
+    "**/packages/backends/tictactoe": false,
     "**/packages/backends/todo": true,
     "**/packages/backends/trillo": true,
     "**/packages/backends/weather": true,

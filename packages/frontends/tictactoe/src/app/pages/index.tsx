@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+
 import Text from "../components/common/text";
+
 import styles from "../styles/pages/index.module.scss";
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-const IndexPage = (): JSX.Element => {
+export default function IndexPage(): JSX.Element {
   return (
     <section className={styles.root}>
       <div>
@@ -13,5 +14,4 @@ const IndexPage = (): JSX.Element => {
       </div>
     </section>
   );
-};
-export default IndexPage;
+}

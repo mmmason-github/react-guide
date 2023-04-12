@@ -3,6 +3,10 @@
     "plugin:@nrwl/nx/react",
     "../../../.eslintrc.json"
   ],
+  "globals": {
+    "JSX": true,
+    "React": true
+  },
   "ignorePatterns": [
     "!**/*"
   ],
@@ -17,11 +21,176 @@
       "rules": { }
     },
     {
+      "extends": [
+        "eslint:all",
+        "plugin:react/all",
+        "plugin:jsx-a11y/recommended",
+        "plugin:prettier/recommended"
+      ],
       "files": [
         "*.ts",
         "*.tsx"
       ],
-      "rules": { }
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        }
+      },
+      "plugins": [
+        "jsx-a11y",
+        "react",
+        "sort-keys-fix"
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": [
+          "error"
+        ],
+        "indent": [
+          "error",
+          2,
+          {
+            "SwitchCase": 1
+          }
+        ],
+        "linebreak-style": [
+          "error",
+          "unix"
+        ],
+        "max-len": [
+          "error",
+          {
+            "code": 80,
+            "comments": 80,
+            "tabWidth": 2
+          }
+        ],
+        "no-console": "off",
+        "no-magic-numbers": [
+          "off"
+        ],
+        "no-param-reassign": "off",
+        "no-plusplus": [
+          "error",
+          {
+            "allowForLoopAfterthoughts": true
+          }
+        ],
+        "no-ternary": [
+          "off"
+        ],
+        "one-var": [
+          "off"
+        ],
+        "prettier/prettier": [
+          "error",
+          {
+            "arrowParens": "always",
+            "bracketSameLine": false,
+            "bracketSpacing": true,
+            "endOfLine": "lf",
+            "jsxSingleQuote": false,
+            "printWidth": 80,
+            "proseWrap": "always",
+            "quoteProps": "as-needed",
+            "semi": true,
+            "singleAttributePerLine": false,
+            "singleQuote": false,
+            "tabWidth": 2,
+            "trailingComma": "none",
+            "useTabs": false,
+            "vueIndentScriptAndStyle": false
+          }
+        ],
+        "quotes": [
+          "error",
+          "double"
+        ],
+        "radix": [
+          "error",
+          "as-needed"
+        ],
+        "react/jsx-filename-extension": [
+          1,
+          {
+            "extensions": [
+              ".jsx",
+              ".tsx"
+            ]
+          }
+        ],
+        "react/jsx-no-literals": "off",
+        "react/react-in-jsx-scope": "off",
+        "semi": [
+          "error",
+          "always"
+        ],
+        "sort-imports": [
+          "error",
+          {
+            "allowSeparatedGroups": true
+          }
+        ],
+        "sort-keys": [
+          "error",
+          "asc",
+          {
+            "caseSensitive": true,
+            "minKeys": 2,
+            "natural": false
+          }
+        ]
+      },
+      "settings": {
+        "componentWrapperFunctions": [
+          "observer", // `property`
+          {
+            "property": "styled"
+          },
+          {
+            "object": "Mobx",
+            "property": "observer"
+          },
+          {
+            "object": "<pragma>",
+            "property": "observer"
+          }
+        ],
+        "formComponents": [
+          "CustomForm",
+          {
+            "formAttribute": "endpoint",
+            "name": "Form"
+          }
+        ],
+        "linkComponents": [
+          "Hyperlink",
+          {
+            "linkAttribute": "to",
+            "name": "Link"
+          }
+        ],
+        "propWrapperFunctions": [
+          "forbidExtraProps",
+          {
+            "object": "Object",
+            "property": "freeze"
+          },
+          {
+            "property": "myFavoriteWrapper"
+          },
+          {
+            "exact": true,
+            "property": "forbidExtraProps"
+          }
+        ],
+        "react": {
+          "createClass": "createReactClass",
+          "flowVersion": "0.53",
+          "fragment": "Fragment",
+          "pragma": "React",
+          "version": "detect"
+        }
+      }
     },
     {
       "files": [
