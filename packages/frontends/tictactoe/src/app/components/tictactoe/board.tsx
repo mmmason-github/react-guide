@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
+
 import Square from "./square";
 
 import styles from "../../styles/components/tictactoe/board.module.scss";
