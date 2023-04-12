@@ -5,30 +5,17 @@
   ],
   "globals": {
     "JSX": true,
-    "React": true,
-    "Status": true
+    "React": true
   },
   "ignorePatterns": [
     "!**/*"
   ],
   "overrides": [
     {
-      "files": [ "server/**/*.ts" ],
-      "extends": [ "hardcore/node" ],
       "env": {
-        "browser": false
-      }
-    },
-    {
-      "files": [
-        "*.ts",
-        "*.tsx",
-        "*.js",
-        "*.jsx"
-      ],
-      "rules": { }
-    },
-    {
+        "browser": true,
+        "es2021": true
+      },
       "extends": [
         "eslint:all",
         "plugin:react/all",
@@ -38,21 +25,31 @@
       ],
       "files": [
         "*.ts",
-        "*.tsx"
+        "*.tsx",
+        "*.js",
+        "*.jsx"
       ],
+      "overrides": [ ],
+      "parser": "@typescript-eslint/parser",
       "parserOptions": {
         "ecmaFeatures": {
           "jsx": true
-        }
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
       },
       "plugins": [
-        "jsx-a11y",
         "react",
+        "prettier",
+        "jsx-a11y",
         "sort-keys-fix"
       ],
       "rules": {
         "@typescript-eslint/explicit-function-return-type": [
           "error"
+        ],
+        "@typescript-eslint/triple-slash-reference": [
+          "off"
         ],
         "indent": [
           "error",
@@ -148,58 +145,14 @@
             "natural": false
           }
         ]
-      },
-      "settings": {
-        "componentWrapperFunctions": [
-          "observer", // `property`
-          {
-            "property": "styled"
-          },
-          {
-            "object": "Mobx",
-            "property": "observer"
-          },
-          {
-            "object": "<pragma>",
-            "property": "observer"
-          }
-        ],
-        "formComponents": [
-          "CustomForm",
-          {
-            "formAttribute": "endpoint",
-            "name": "Form"
-          }
-        ],
-        "linkComponents": [
-          "Hyperlink",
-          {
-            "linkAttribute": "to",
-            "name": "Link"
-          }
-        ],
-        "propWrapperFunctions": [
-          "forbidExtraProps",
-          {
-            "object": "Object",
-            "property": "freeze"
-          },
-          {
-            "property": "myFavoriteWrapper"
-          },
-          {
-            "exact": true,
-            "property": "forbidExtraProps"
-          }
-        ],
-        "react": {
-          "createClass": "createReactClass",
-          "flowVersion": "0.53",
-          "fragment": "Fragment",
-          "pragma": "React",
-          "version": "detect"
-        }
       }
+    },
+    {
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "rules": { }
     },
     {
       "files": [

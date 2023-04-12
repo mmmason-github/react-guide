@@ -3,25 +3,22 @@
   "generators": {
     "@nrwl/react": {
       "application": {
-        "babel": true,
-        "bundler": "webpack",
+        "style": "scss",
         "linter": "eslint",
-        "style": "scss"
+        "bundler": "webpack",
+        "babel": true
       },
       "component": {
         "style": "scss"
       },
       "library": {
-        "linter": "eslint",
-        "style": "scss"
+        "style": "scss",
+        "linter": "eslint"
       }
     }
   },
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -29,26 +26,16 @@
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/.eslintrc.json"
     ],
-    "sharedGlobals": [
-      "{workspaceRoot}/babel.config.json"
-    ]
+    "sharedGlobals": ["{workspaceRoot}/babel.config.json"]
   },
   "npmScope": "react-guide",
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "e2e": {
-      "inputs": [
-        "default",
-        "^production"
-      ]
+      "inputs": ["default", "^production"]
     },
     "lint": {
       "inputs": [
@@ -58,23 +45,14 @@
       ]
     },
     "test": {
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/jest.preset.js"
-      ]
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     }
   },
   "tasksRunnerOptions": {
     "default": {
       "options": {
         "accessToken": "ODk1NjVkYmMtZWU5ZC00MDM2LWI5Y2ItMGI4NDVjMDNlYmEzfHJlYWQtd3JpdGU=",
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       },
       "runner": "@nrwl/nx-cloud"
     }

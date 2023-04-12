@@ -2,6 +2,7 @@ section.root {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
+  align-content: center;
   background: var(--background);
   color: var(--color);
   display: grid;
@@ -11,13 +12,27 @@ section.root {
   font-weight: 400;
   grid-column: 1;
   grid-row: 1;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: 30rem;
+  grid-template-rows: 32rem;
   height: 100%;
+  justify-content: center;
   line-height: 1.5;
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
   width: 100%;
   z-index: 0;
+
+  & > div {
+    align-content: center;
+    border-radius: 0.3rem;
+    border: 0.2rem solid var(--color);
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+    grid-template-columns: 96%;
+    grid-template-rows: 98%;
+    justify-content: center;
+    padding-bottom: 0.5rem;
+  }
 }

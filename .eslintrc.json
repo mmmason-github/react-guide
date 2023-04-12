@@ -36,6 +36,9 @@
         "*.ts",
         "*.tsx"
       ],
+      "parserOptions": {
+        "project": "./tsconfig.base.json"
+      },
       "rules": { }
     },
     {

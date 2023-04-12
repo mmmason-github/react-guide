@@ -60,6 +60,7 @@
     "**/messages.xlf": true,
     "**/node_modules/": true,
     "**/package-lock.json": true,
+    "**/.idea": true,
 
     // NX
     "**/nx.json": true,
@@ -68,7 +69,7 @@
     // Angular / React / Nest
     "**/.babelrc": true,
     "**/.editorconfig": true,
-    "**/.eslint*": true,
+    "**/.eslint*": false,
     "**/.gitignore": true,
     "**/.prettier*": true,
     "**/README.md": true,
@@ -82,21 +83,22 @@
     "**/package.json": true,
     "**/environments": true,
     "**/project.json": true,
+    "**/.stylelintignore": true,
     "**/proxy.conf.json": true,
     "**/test-setup.ts": true,
-    "**/tsconfig.*": true,
+    "**/tsconfig.*": false,
     "**/webpack.config.js": true,
 
     // Current Projects
 
     // Backends
-    "**/packages/backends/": false,
+    "**/packages/backends/": true,
     "**/packages/backends/authenticator": true,
     "**/packages/backends/natours": true,
     "**/packages/backends/nexter": true,
     "**/packages/backends/stumble": true,
     "**/packages/backends/tetris": true,
-    "**/packages/backends/tictactoe": false,
+    "**/packages/backends/tictactoe": true,
     "**/packages/backends/todo": true,
     "**/packages/backends/trillo": true,
     "**/packages/backends/weather": true,
@@ -110,6 +112,8 @@
     "**/packages/frontends/tetris": true,
     "**/packages/frontends/tictactoe": false,
     "**/packages/frontends/todo": true,
+    "**/packages/frontends/learn": true,
+    "**/packages/frontends/playground": true,
     "**/packages/frontends/trillo": true,
     "**/packages/frontends/weather": true,
 
@@ -339,26 +343,6 @@
   "[sql]": {
     "editor.defaultFormatter": "AdamRybak.graycat-sql-formatter"
   },
-
-  // Stylelint
-  "stylelint.validate": [
-    "css",
-    "html",
-    "less",
-    "markdown",
-    "postcss",
-    "sass",
-    "scss",
-    "source.css.styled",
-    "styled-css",
-    "sugarss",
-    "svelte",
-    "vue",
-    "vue-html",
-    "vue-postcss",
-    "xml",
-    "xsl"
-  ],
 
   // Typescript 
   "typescript.autoClosingTags": true,

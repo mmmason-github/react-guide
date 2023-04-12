@@ -1,0 +1,13 @@
+div.status {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+div.boardRow {
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
