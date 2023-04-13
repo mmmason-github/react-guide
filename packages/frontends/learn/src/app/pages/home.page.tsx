@@ -1,18 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable func-style */
+/* eslint-disable no-restricted-globals */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/hook-use-state */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/no-multi-comp */
 
 import { Link } from "react-router-dom";
 
-import styles from "../styles/pages/home.module.scss";
+import { AppList, Apps } from "../components/applist";
 
-interface Apps {
-  key: number;
-  link: string;
-  name: string;
-}
+import styles from "../styles/pages/home.module.scss";
 
 const apps: Apps[] = [
   {
@@ -57,20 +55,6 @@ const apps: Apps[] = [
   }
 ];
 
-function AppList(): JSX.Element {
-  return (
-    <ul>
-      <li>
-        {apps.map(
-          (app): JSX.Element => (
-            <Link key={app.key} to={app.link}>{`${app.name} Component`}</Link>
-          )
-        )}
-      </li>
-    </ul>
-  );
-}
-
 export default function HomePage(): JSX.Element {
   return (
     <div className={styles.root}>
@@ -80,7 +64,9 @@ export default function HomePage(): JSX.Element {
         <br />
         Learn react concepts
       </h2>
-      <AppList />
+      <AppList apps={apps} />
+      <h4>Test out authentication with a backend</h4>
+      <Link to="/auth">Authentication Page</Link>
     </div>
   );
 }

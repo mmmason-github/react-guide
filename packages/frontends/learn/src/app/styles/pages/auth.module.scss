@@ -1,0 +1,17 @@
+div.root {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content 1fr;
+  height: 17.5rem;
+  place-self: center;
+  width: 30rem;
+}
+
+div.onError {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content max-content 1fr;
+  height: 20.5rem;
+  place-self: center;
+  width: 30rem;
+}

@@ -11,7 +11,8 @@
     "!**/*"
   ],
   "overrides": [
-    { "extends": [
+    {
+      "extends": [
         "eslint:all",
         "plugin:react/all",
         "plugin:jsx-a11y/recommended",
@@ -119,7 +120,12 @@
           "error",
           {
             "allowSeparatedGroups": true,
-            "memberSyntaxSortOrder": [ "none", "all", "multiple", "single" ]
+            "memberSyntaxSortOrder": [
+              "none",
+              "all",
+              "multiple",
+              "single"
+            ]
           }
         ],
         "sort-keys": [

@@ -1,6 +1,6 @@
-/* eslint-disable no-restricted-globals */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable func-style */
+/* eslint-disable no-restricted-globals */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/hook-use-state */
 /* eslint-disable react/jsx-no-bind */

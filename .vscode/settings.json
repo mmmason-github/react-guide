@@ -95,9 +95,9 @@
     // Current Projects
 
     // Backends
-    "**/packages/backends/": true,
+    "**/packages/backends/": false,
     "**/packages/backends/authenticator": true,
-    "**/packages/backends/learn": true,
+    "**/packages/backends/learn": false,
     "**/packages/backends/natours": true,
     "**/packages/backends/nexter": true,
     "**/packages/backends/stumble": true,
@@ -166,7 +166,7 @@
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80
   },
-  "javascript.format.enable": false,
+  "javascript.format.enable": true,
 
   // Formatter Json
   "[json]": {
@@ -207,7 +207,7 @@
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80
   },
-  "typescript.format.enable": false,
+  "typescript.format.enable": true,
 
   // CSS
   "css.completion.completePropertyWithSemicolon": true,
@@ -280,9 +280,9 @@
   "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
   "javascript.format.placeOpenBraceOnNewLineForControlBlocks": false,
   "javascript.format.placeOpenBraceOnNewLineForFunctions": false,
-  "javascript.format.semicolons": "insert",
+  "javascript.format.semicolons": "ignore",
   "javascript.preferences.quoteStyle": "double",
-  "javascript.suggest.autoImports": false,
+  "javascript.suggest.autoImports": true,
   "javascript.suggest.classMemberSnippets.enabled": true,
   "javascript.suggest.completeFunctionCalls": true,
   "javascript.suggest.completeJSDocs": true,
@@ -380,9 +380,9 @@
   "typescript.format.insertSpaceBeforeFunctionParenthesis": false,
   "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
   "typescript.format.placeOpenBraceOnNewLineForFunctions": false,
-  "typescript.format.semicolons": "insert",
+  "typescript.format.semicolons": "ignore",
   "typescript.preferences.quoteStyle": "double",
-  "typescript.suggest.autoImports": false,
+  "typescript.suggest.autoImports": true,
   "typescript.suggest.classMemberSnippets.enabled": true,
   "typescript.suggest.completeFunctionCalls": true,
   "typescript.suggest.completeJSDocs": true,

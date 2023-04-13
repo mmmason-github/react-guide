@@ -1,5 +1,6 @@
 import { NestFactory } from "@nestjs/core";
 import { NestExpressApplication } from "@nestjs/platform-express";
+
 import { RootModule } from "./app/modules/root.module";
 
 async function bootstrap(): Promise<void> {

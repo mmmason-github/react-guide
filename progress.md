@@ -1,4 +1,4 @@
-# April 12 - 2023 - 9:06pm
+# April 12 - 2023 - 9:06pm (Start)
 
 # Current project: `Learn`
 
@@ -16,8 +16,8 @@
 
 - [x] Implement Switch
 - [x] HomePage
-- [ ] AuthPage
-- [ ] Fetch
+- [x] AuthPage
+- [x] Fetch
 - [x] Add Jest
 - [x] Add Cypress
 - [ ] Context
@@ -31,7 +31,7 @@
 
 - [x] Implement progress.md
 
-## Total - (5/17)
+## Total - (7/17)
 
 ## Notes
 
@@ -40,3 +40,5 @@
 # Spend time on refractoring for auth and home page.
 
 # Need to implement calculator, profile, tictactoe, todo.
+
+# Added a `resize` hack.
