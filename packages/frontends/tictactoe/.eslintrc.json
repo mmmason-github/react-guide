@@ -13,13 +13,6 @@
   ],
   "overrides": [
     {
-      "files": [ "server/**/*.ts" ],
-      "extends": [ "hardcore/node" ],
-      "env": {
-        "browser": false
-      }
-    },
-    {
       "files": [
         "*.ts",
         "*.tsx",

@@ -1,0 +1,14 @@
+div.root {
+  align-content: center;
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-auto-columns: max-content;
+  justify-content: center;
+  height: 15rem;
+  width: 30rem;
+
+  & > img {
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,30 @@
+div.root {
+  align-content: start;
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-auto-columns: max-content;
+  justify-content: center;
+
+  & > h1 {
+    font-size: 2rem;
+  }
+
+  & > button {
+    border-radius: 0.33rem;
+    border: 0.1rem solid var(--color);
+    box-sizing: content-box;
+    font-size: 1.5rem;
+    height: max-content;
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: max-content;
+
+    &.ok {
+      background-color: var(--color);
+    }
+
+    &.warning {
+      background-color: red;
+    }
+  }
+}

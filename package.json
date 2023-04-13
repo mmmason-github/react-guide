@@ -5,6 +5,7 @@
     "url": "https://github.com/mmmason-github/"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^2.3.1",
     "@nestjs/core": "^9.0.0",
@@ -19,6 +20,8 @@
     "react-router-dom": "^6.10.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
+    "styled-components": "^5.3.9",
+    "styled-jsx": "^5.1.2",
     "tslib": "^2.3.0"
   },
   "description": "Collection of react projects to use for a reference",

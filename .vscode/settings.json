@@ -25,9 +25,9 @@
 
   // Editor
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
+    "source.fixAll": false,
     "source.fixAll.eslint": true,
-    "source.organizeImports": true
+    "source.organizeImports": false
   },
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
@@ -51,6 +51,7 @@
 
   // Eslint
   "eslint.enable": true,
+  "eslint.format.enable": true,
 
   // Excluded
   "files.exclude": {
@@ -69,25 +70,27 @@
     // Angular / React / Nest
     "**/.babelrc": true,
     "**/.editorconfig": true,
-    "**/.eslint*": false,
+    "**/.eslintrc.json": true,
     "**/.gitignore": true,
     "**/.prettier*": true,
+    "**/.stylelintignore": true,
     "**/README.md": true,
     "**/assets": true,
     "**/babel.config.json": true,
+    "**/environments": true,
     "**/favicon.ico": true,
     "**/index.html": true,
     "**/jest.*": true,
     "**/manifest.webmanifest": true,
     "**/ngsw-config.json": true,
     "**/package.json": true,
-    "**/environments": true,
     "**/project.json": true,
-    "**/.stylelintignore": true,
     "**/proxy.conf.json": true,
     "**/test-setup.ts": true,
-    "**/tsconfig.*": false,
+    "**/tsconfig.*": true,
     "**/webpack.config.js": true,
+    ".eslintignore": true,
+    ".eslintrc.json": true,
 
     // Current Projects
 
@@ -110,9 +113,9 @@
     "**/packages/frontends/nexter": true,
     "**/packages/frontends/stumble": true,
     "**/packages/frontends/tetris": true,
-    "**/packages/frontends/tictactoe": false,
+    "**/packages/frontends/tictactoe": true,
     "**/packages/frontends/todo": true,
-    "**/packages/frontends/learn": true,
+    "**/packages/frontends/learn": false,
     "**/packages/frontends/playground": true,
     "**/packages/frontends/trillo": true,
     "**/packages/frontends/weather": true,
@@ -135,7 +138,7 @@
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features",
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 80,
+    "editor.wordWrapColumn": 80
   },
   "css.format.enable": true,
 
@@ -143,7 +146,7 @@
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features",
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 80,
+    "editor.wordWrapColumn": 80
   },
   "html.format.enable": true,
 
@@ -151,40 +154,40 @@
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 80,
+    "editor.wordWrapColumn": 80
   },
-  "javascript.format.enable": true,
+  "javascript.format.enable": false,
 
   // Formatter Json
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features",
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 120,
+    "editor.wordWrapColumn": 120
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features",
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 120,
+    "editor.wordWrapColumn": 120
   },
   "json.format.enable": true,
 
   // Formatter React
   "[javascriptreact]": {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+    "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 80,
+    "editor.wordWrapColumn": 80
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+    "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 80,
+    "editor.wordWrapColumn": 80
   },
 
   // Formatter SCSS
   "[scss]": {
     "editor.defaultFormatter": "vscode.css-language-features",
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 80,
+    "editor.wordWrapColumn": 80
   },
   "scss.format.enable": true,
 
@@ -192,9 +195,9 @@
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 80,
+    "editor.wordWrapColumn": 80
   },
-  "typescript.format.enable": true,
+  "typescript.format.enable": false,
 
   // CSS
   "css.completion.completePropertyWithSemicolon": true,
@@ -269,7 +272,7 @@
   "javascript.format.placeOpenBraceOnNewLineForFunctions": false,
   "javascript.format.semicolons": "insert",
   "javascript.preferences.quoteStyle": "double",
-  "javascript.suggest.autoImports": true,
+  "javascript.suggest.autoImports": false,
   "javascript.suggest.classMemberSnippets.enabled": true,
   "javascript.suggest.completeFunctionCalls": true,
   "javascript.suggest.completeJSDocs": true,
@@ -280,6 +283,7 @@
   "javascript.suggest.names": true,
   "javascript.suggest.paths": true,
   "javascript.suggestionActions.enabled": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
   "javascript.validate.enable": true,
 
   // Json
@@ -289,7 +293,7 @@
 
   // Prettier
   "prettier.arrowParens": "always",
-  "prettier.bracketSameLine": false,
+  "prettier.bracketSameLine": true,
   "prettier.bracketSpacing": true,
   "prettier.enable": true,
   "prettier.endOfLine": "lf",
@@ -306,6 +310,10 @@
   "prettier.trailingComma": "none",
   "prettier.useTabs": false,
   "prettier.vueIndentScriptAndStyle": false,
+
+  // Proxy
+  "http.proxyAuthorization": null,
+  "http.proxyStrictSSL": false,
 
   // SCSS
   "scss.completion.completePropertyWithSemicolon": true,
@@ -357,14 +365,14 @@
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
   "typescript.format.insertSpaceAfterSemicolonInForStatements": true,
+  "typescript.format.insertSpaceAfterTypeAssertion": false,
   "typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
   "typescript.format.insertSpaceBeforeFunctionParenthesis": false,
-  "typescript.format.insertSpaceAfterTypeAssertion": false,
   "typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
   "typescript.format.placeOpenBraceOnNewLineForFunctions": false,
   "typescript.format.semicolons": "insert",
   "typescript.preferences.quoteStyle": "double",
-  "typescript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": false,
   "typescript.suggest.classMemberSnippets.enabled": true,
   "typescript.suggest.completeFunctionCalls": true,
   "typescript.suggest.completeJSDocs": true,
@@ -375,5 +383,6 @@
   "typescript.suggest.objectLiteralMethodSnippets.enabled": true,
   "typescript.suggest.paths": true,
   "typescript.suggestionActions.enabled": false,
-  "typescript.validate.enable": true,
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "typescript.validate.enable": true
 }

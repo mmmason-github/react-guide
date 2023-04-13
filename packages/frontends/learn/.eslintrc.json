@@ -11,12 +11,7 @@
     "!**/*"
   ],
   "overrides": [
-    {
-      "env": {
-        "browser": true,
-        "es2021": true
-      },
-      "extends": [
+    { "extends": [
         "eslint:all",
         "plugin:react/all",
         "plugin:jsx-a11y/recommended",
@@ -25,31 +20,21 @@
       ],
       "files": [
         "*.ts",
-        "*.tsx",
-        "*.js",
-        "*.jsx"
+        "*.tsx"
       ],
-      "overrides": [ ],
-      "parser": "@typescript-eslint/parser",
       "parserOptions": {
         "ecmaFeatures": {
           "jsx": true
-        },
-        "ecmaVersion": "latest",
-        "sourceType": "module"
+        }
       },
       "plugins": [
-        "react",
-        "prettier",
         "jsx-a11y",
+        "react",
         "sort-keys-fix"
       ],
       "rules": {
         "@typescript-eslint/explicit-function-return-type": [
           "error"
-        ],
-        "@typescript-eslint/triple-slash-reference": [
-          "off"
         ],
         "indent": [
           "error",
@@ -91,7 +76,7 @@
           "error",
           {
             "arrowParens": "always",
-            "bracketSameLine": false,
+            "bracketSameLine": true,
             "bracketSpacing": true,
             "endOfLine": "lf",
             "jsxSingleQuote": false,
@@ -133,7 +118,8 @@
         "sort-imports": [
           "error",
           {
-            "allowSeparatedGroups": true
+            "allowSeparatedGroups": true,
+            "memberSyntaxSortOrder": [ "none", "all", "multiple", "single" ]
           }
         ],
         "sort-keys": [
@@ -145,6 +131,57 @@
             "natural": false
           }
         ]
+      },
+      "settings": {
+        "componentWrapperFunctions": [
+          "observer", // `property`
+          {
+            "property": "styled"
+          },
+          {
+            "object": "Mobx",
+            "property": "observer"
+          },
+          {
+            "object": "<pragma>",
+            "property": "observer"
+          }
+        ],
+        "formComponents": [
+          "CustomForm",
+          {
+            "formAttribute": "endpoint",
+            "name": "Form"
+          }
+        ],
+        "linkComponents": [
+          "Hyperlink",
+          {
+            "linkAttribute": "to",
+            "name": "Link"
+          }
+        ],
+        "propWrapperFunctions": [
+          "forbidExtraProps",
+          {
+            "object": "Object",
+            "property": "freeze"
+          },
+          {
+            "property": "myFavoriteWrapper"
+          },
+          {
+            "exact": true,
+            "property": "forbidExtraProps"
+          }
+        ],
+        "react": {
+          "createClass": "createReactClass",
+          "flowVersion": "0.53",
+          "fragment": "Fragment",
+          "pragma": "React",
+          "version": "detect"
+        }
       }
     },
     {
