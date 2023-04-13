@@ -1,34 +1,52 @@
 {
-  "name": "backends-learn",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/backends/learn/src",
+  "name": "backends-learn",
   "projectType": "application",
+  "sourceRoot": "packages/backends/learn/src",
+  "tags": [ ],
   "targets": {
     "build": {
-      "executor": "@nrwl/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "configurations": {
+        "development": { },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/backends/learn/src/environments/environment.dev.ts",
+              "with": "packages/backends/learn/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      },
       "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
       "options": {
-        "target": "node",
+        "assets": [
+          "packages/backends/learn/src/docs/dist"
+        ],
         "compiler": "tsc",
-        "outputPath": "dist/packages/backends/learn",
-        "main": "packages/backends/learn/src/main.ts",
-        "tsConfig": "packages/backends/learn/tsconfig.app.json",
-        "assets": ["packages/backends/learn/src/assets"],
         "isolatedConfig": true,
+        "main": "packages/backends/learn/src/main.ts",
+        "outputPath": "dist/packages/backends/learn",
+        "target": "node",
+        "tsConfig": "packages/backends/learn/tsconfig.app.json",
         "webpackConfig": "packages/backends/learn/webpack.config.js"
       },
-      "configurations": {
-        "development": {},
-        "production": {}
-      }
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/backends/learn/**/*.ts"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
     },
     "serve": {
-      "executor": "@nrwl/js:node",
-      "defaultConfiguration": "development",
-      "options": {
-        "buildTarget": "backends-learn:build"
-      },
       "configurations": {
         "development": {
           "buildTarget": "backends-learn:build:development"
@@ -36,29 +54,28 @@
         "production": {
           "buildTarget": "backends-learn:build:production"
         }
-      }
-    },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/js:node",
       "options": {
-        "lintFilePatterns": ["packages/backends/learn/**/*.ts"]
+        "buildTarget": "backends-learn:build"
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "packages/backends/learn/jest.config.ts",
-        "passWithNoTests": true
-      },
       "configurations": {
         "ci": {
           "ci": true,
           "codeCoverage": true
         }
-      }
+      },
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/backends/learn/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ]
     }
-  },
-  "tags": []
+  }
 }

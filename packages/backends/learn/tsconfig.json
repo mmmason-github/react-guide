@@ -1,7 +1,12 @@
 {
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "strict": true
+  },
   "extends": "../../../tsconfig.base.json",
-  "files": [],
-  "include": [],
+  "files": [ ],
+  "include": [ ],
   "references": [
     {
       "path": "./tsconfig.app.json"
@@ -9,8 +14,5 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ],
-  "compilerOptions": {
-    "esModuleInterop": true
-  }
+  ]
 }

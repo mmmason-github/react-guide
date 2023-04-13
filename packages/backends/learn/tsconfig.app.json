@@ -1,12 +1,24 @@
 {
-  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../../dist/out-tsc",
-    "module": "commonjs",
-    "types": ["node"],
     "emitDecoratorMetadata": true,
-    "target": "es2015"
+    "module": "commonjs",
+    "outDir": "../../../dist/out-tsc",
+    "target": "es2015",
+    "types": [
+      "node"
+    ]
   },
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
-  "include": ["src/**/*.ts"]
+  "exclude": [
+    "jest.config.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts"
+  ],
+  "extends": "./tsconfig.json",
+  "files": [
+    "../../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
+    "../../../node_modules/@nrwl/react/typings/image.d.ts"
+  ],
+  "include": [
+    "src/**/*.ts"
+  ]
 }

@@ -6,6 +6,7 @@
 
 - [ ] Authentication
 - [ ] Configuration
+- [ ] GraphQL
 - [ ] SQLite
 - [ ] Mongo
 - [ ] Mysql
@@ -31,7 +32,7 @@
 
 - [x] Implement progress.md
 
-## Total - (9/17)
+## Total - (9/18)
 
 ## Notes
 
@@ -42,3 +43,7 @@
 # Need to implement calculator, profile, tictactoe, todo.
 
 # Added a `resize` hack.
+
+# Added a task -> GraphQL `Not enough to do... Clearly.`
+
+# Added a react `doc` to backend
