@@ -31,7 +31,7 @@
 
 - [x] Implement progress.md
 
-## Total - (7/17)
+## Total - (9/17)
 
 ## Notes
 
