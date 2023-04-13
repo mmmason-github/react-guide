@@ -6,7 +6,7 @@
 
 import styles from "../styles/components/tictactoe.module.scss";
 
-export default function App(): JSX.Element {
+export function Tictactoe(): JSX.Element {
   return (
     <div className={styles.root}>
       <h1>Start</h1>

@@ -6,7 +6,7 @@
 
 import styles from "../styles/components/profile.module.scss";
 
-export default function App(): JSX.Element {
+export function Profile(): JSX.Element {
   return (
     <div className={styles.root}>
       <h1>Start</h1>

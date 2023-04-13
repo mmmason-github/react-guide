@@ -9,17 +9,17 @@
 - [ ] SQLite
 - [ ] Mongo
 - [ ] Mysql
-- [ ] Add Jest
-- [ ] Add Cypress <br>
+- [x] Add Jest
+- [x] Add Cypress <br>
 
 ## Frontend
 
-- [ ] Implement Switch
-- [ ] HomePage
+- [x] Implement Switch
+- [x] HomePage
 - [ ] AuthPage
 - [ ] Fetch
-- [ ] Add Jest
-- [ ] Add Cypress
+- [x] Add Jest
+- [x] Add Cypress
 - [ ] Context
 - [ ] Redux <br>
 
@@ -29,6 +29,14 @@
 
 ## Misc
 
-- [ ] Implement progress.md
+- [x] Implement progress.md
 
-## Total - (0/17)
+## Total - (5/17)
+
+## Notes
+
+# Get emoji to work in editor?
+
+# Spend time on refractoring for auth and home page.
+
+# Need to implement calculator, profile, tictactoe, todo.

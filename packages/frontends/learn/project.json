@@ -1,9 +1,9 @@
 {
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "name": "frontends-learn",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "packages/frontends/learn/src",
-  "tags": [ ],
+  "tags": [],
   "targets": {
     "build": {
       "configurations": {
@@ -31,36 +31,26 @@
       "defaultConfiguration": "production",
       "executor": "@nrwl/webpack:webpack",
       "options": {
-        "assets": [
-          "packages/frontends/learn/src/favicon.ico"
-        ],
+        "assets": ["packages/frontends/learn/src/favicon.ico"],
         "baseHref": "/",
         "compiler": "babel",
         "index": "packages/frontends/learn/src/index.html",
         "isolatedConfig": true,
         "main": "packages/frontends/learn/src/main.tsx",
         "outputPath": "dist/packages/frontends/learn",
-        "scripts": [ ],
-        "styles": [
-          "packages/frontends/learn/src/app/styles/globals.scss"
-        ],
+        "scripts": [],
+        "styles": ["packages/frontends/learn/src/app/styles/globals.scss"],
         "tsConfig": "packages/frontends/learn/tsconfig.app.json",
         "webpackConfig": "packages/frontends/learn/webpack.config.js"
       },
-      "outputs": [
-        "{options.outputPath}"
-      ]
+      "outputs": ["{options.outputPath}"]
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "packages/frontends/learn/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["packages/frontends/learn/**/*.{ts,tsx,js,jsx}"]
       },
-      "outputs": [
-        "{options.outputFile}"
-      ]
+      "outputs": ["{options.outputFile}"]
     },
     "serve": {
       "configurations": {
@@ -76,7 +66,8 @@
       "executor": "@nrwl/webpack:dev-server",
       "options": {
         "buildTarget": "frontends-learn:build",
-        "hmr": true
+        "hmr": true,
+        "proxyConfig": "packages/frontends/learn/proxy.conf.json"
       }
     },
     "test": {
@@ -91,9 +82,7 @@
         "jestConfig": "packages/frontends/learn/jest.config.ts",
         "passWithNoTests": true
       },
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ]
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
     }
   }
 }

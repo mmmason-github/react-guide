@@ -6,7 +6,7 @@
 
 import styles from "../styles/components/todo.module.scss";
 
-export default function App(): JSX.Element {
+export function Todo(): JSX.Element {
   return (
     <div className={styles.root}>
       <h1>Start</h1>

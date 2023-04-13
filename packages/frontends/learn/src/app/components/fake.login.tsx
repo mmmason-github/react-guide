@@ -21,16 +21,14 @@
  * a component?
  */
 
-import { useCallback, useState } from "react";
+import styles from "../styles/components/fake.login.module.scss";
 
-import styles from "../styles/components/login.module.scss";
-
-interface User {
+export interface User {
   username: string;
   password: string;
 }
 
-function AdminPanel(): JSX.Element {
+export function AdminPanel(): JSX.Element {
   return (
     <div className={styles.admin}>
       <h1>Admin Page</h1>
@@ -45,7 +43,7 @@ type FormProps = {
   setPage: (formData: User) => void;
 };
 
-function Form({ setPage }: FormProps): JSX.Element {
+export function Form({ setPage }: FormProps): JSX.Element {
   /*
    * Error fixed.
    * const [formData, setFormData] = useState({
@@ -93,7 +91,7 @@ type LoginProps = {
   setPage: (formData: User) => void;
 };
 
-function LoginPanel({ setPage }: LoginProps): JSX.Element {
+export function LoginPanel({ setPage }: LoginProps): JSX.Element {
   return (
     <div className={styles.login}>
       <header>Login Page</header>
@@ -104,43 +102,10 @@ function LoginPanel({ setPage }: LoginProps): JSX.Element {
   );
 }
 
-function UserPanel(): JSX.Element {
+export function UserPanel(): JSX.Element {
   return (
     <div className={styles.admin}>
       <h1>User Page</h1>
     </div>
   );
-}
-
-export default function App(): JSX.Element {
-  const [isAdmin, setAdmin] = useState(false);
-  const [isLoggedIn, setLoggedIn] = useState(false);
-
-  const setPage = useCallback((formData: User) => {
-    const admin: User = {
-      password: "admin",
-      username: "admin"
-    };
-
-    if (
-      admin.password === formData.password &&
-      admin.username === formData.username
-    ) {
-      setAdmin(true);
-      setLoggedIn(true);
-    } else if (formData.password.length >= 6 && formData.username.length >= 6) {
-      setAdmin(false);
-      setLoggedIn(true);
-    }
-  }, []);
-
-  let content: JSX.Element = <LoginPanel key={0} setPage={setPage} />;
-
-  if (isAdmin && isLoggedIn) {
-    content = <AdminPanel key={1} />;
-  } else if (!isAdmin && isLoggedIn) {
-    content = <UserPanel key={2} />;
-  }
-
-  return <div className={styles.root}>{content}</div>;
 }

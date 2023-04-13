@@ -11,7 +11,7 @@ import styles from "../styles/components/button.module.scss";
 type OnClickFuncType = React.MouseEventHandler<HTMLButtonElement>;
 type OnClickEventType = React.MouseEvent<HTMLButtonElement>;
 
-function Button(): JSX.Element {
+export function Button(): JSX.Element {
   const [ok, setOk] = useState(true);
 
   function OnClick(event: OnClickEventType): void {
@@ -20,20 +20,14 @@ function Button(): JSX.Element {
   }
 
   return (
-    <button
-      className={ok ? styles.ok : styles.warning}
-      onClick={OnClick}
-      type="button">
-      {ok ? "OK!" : "WARNING!"}
-    </button>
-  );
-}
-
-export default function App(): JSX.Element {
-  return (
     <div className={styles.root}>
       <h1>Welcome to my app</h1>
-      <Button />
+      <button
+        className={ok ? styles.ok : styles.warning}
+        onClick={OnClick}
+        type="button">
+        {ok ? "OK!" : "WARNING!"}
+      </button>
     </div>
   );
 }

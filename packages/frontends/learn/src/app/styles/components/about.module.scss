@@ -1,11 +1,14 @@
 div.root {
   align-content: center;
+  border-radius: 0.33rem;
+  border: 0.2rem solid var(--color);
   display: grid;
-  grid-auto-rows: max-content;
-  grid-auto-columns: max-content;
   justify-content: center;
-  height: 15rem;
-  width: 30rem;
+
+  & > h1 {
+    color: var(--color);
+    font-size: 2rem;
+  }
 
   & > img {
     border-radius: 50%;

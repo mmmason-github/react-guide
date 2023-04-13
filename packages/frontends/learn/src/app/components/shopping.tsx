@@ -13,7 +13,8 @@ type ShoppingListProps = {
     title: string;
   }[];
 };
-function ShoppingList({ products }: ShoppingListProps): JSX.Element {
+
+export function ShoppingList({ products }: ShoppingListProps): JSX.Element {
   const listItems = products.map(
     (product): JSX.Element => (
       <li
@@ -23,32 +24,10 @@ function ShoppingList({ products }: ShoppingListProps): JSX.Element {
       </li>
     )
   );
-  return <ul>{listItems}</ul>;
-}
-
-export default function App(): JSX.Element {
-  const products = [
-    {
-      id: 1,
-      isFruit: false,
-      title: "Cabbage"
-    },
-    {
-      id: 2,
-      isFruit: false,
-      title: "Garlic"
-    },
-    {
-      id: 3,
-      isFruit: true,
-      title: "Apple"
-    }
-  ];
-
   return (
     <div className={styles.root}>
       <h1>Shopping List</h1>
-      <ShoppingList products={products} />
+      <ul>{listItems}</ul>
     </div>
   );
 }

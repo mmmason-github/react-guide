@@ -97,6 +97,7 @@
     // Backends
     "**/packages/backends/": true,
     "**/packages/backends/authenticator": true,
+    "**/packages/backends/learn": true,
     "**/packages/backends/natours": true,
     "**/packages/backends/nexter": true,
     "**/packages/backends/stumble": true,
@@ -106,17 +107,26 @@
     "**/packages/backends/trillo": true,
     "**/packages/backends/weather": true,
 
+    // E2E 
+    "**/packages/e2e": true,
+
+    // E2E Backends
+    "**/packages/e2e/backends/learn": true,
+
+    // E2E Frontends
+    "**/packages/e2e/frontends/learn": true,
+
     // Frontends
     "**/packages/frontends/": false,
     "**/packages/frontends/authenticator": true,
+    "**/packages/frontends/learn": false,
     "**/packages/frontends/natours": true,
     "**/packages/frontends/nexter": true,
+    "**/packages/frontends/playground": true,
     "**/packages/frontends/stumble": true,
     "**/packages/frontends/tetris": true,
     "**/packages/frontends/tictactoe": true,
     "**/packages/frontends/todo": true,
-    "**/packages/frontends/learn": false,
-    "**/packages/frontends/playground": true,
     "**/packages/frontends/trillo": true,
     "**/packages/frontends/weather": true,
 

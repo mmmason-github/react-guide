@@ -18,9 +18,9 @@ const user: User = {
   url: "https://i.imgur.com/yXOvdOSs.jpg"
 };
 
-function Profile(): JSX.Element {
+export function Profile(): JSX.Element {
   return (
-    <>
+    <div className={styles.root}>
       <h1>{user.name}</h1>
       <img
         alt={user.name}
@@ -30,14 +30,6 @@ function Profile(): JSX.Element {
           width: user.size
         }}
       />
-    </>
-  );
-}
-
-export default function App(): JSX.Element {
-  return (
-    <div className={styles.root}>
-      <Profile />
     </div>
   );
 }

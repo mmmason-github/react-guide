@@ -11,7 +11,7 @@
   --background: #1e293b;
   --color: #d0d4fc;
   --family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --size: 20px;
+  --size: 10px;
   // Global Configs
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -37,24 +37,18 @@ html {
 body {
   align-content: center;
   display: grid;
-  grid-template-columns: 30rem;
-  grid-template-rows: 30rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   height: 100%;
   justify-content: center;
   width: 100%;
 
   & > div#root {
     display: grid;
-    grid-template-columns: 30rem;
-    grid-template-rows: 30rem;
-    height: 100%;
-    width: 100%;
-
-    & > div {
-      border-radius: 0.2rem;
-      border: 0.2rem solid var(--color);
-      grid-column: 1;
-      grid-row: 1;
-    }
+    grid-column: 1;
+    grid-row: 1;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    padding: 0.25rem;
   }
 }

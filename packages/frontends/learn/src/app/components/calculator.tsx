@@ -6,7 +6,7 @@
 
 import styles from "../styles/components/calculator.module.scss";
 
-export default function App(): JSX.Element {
+export function Calculator(): JSX.Element {
   return (
     <div className={styles.root}>
       <h1>Start</h1>

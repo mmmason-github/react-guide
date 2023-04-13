@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import PageLayout from "./app/layouts/page";
 import IndexPage from "./app/pages";
 import LoginPage from "./app/pages/login";
 import NoMatchPage from "./app/pages/nomatch";
+import PageLayout from "./app/layouts/page";
 import RegisterPage from "./app/pages/register";
 import TicTacToePage from "./app/pages/tictactoe";
 
