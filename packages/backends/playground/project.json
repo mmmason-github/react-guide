@@ -1,0 +1,50 @@
+{
+  "name": "backends-playground",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/backends/playground/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/packages/backends/playground",
+        "main": "packages/backends/playground/src/main.ts",
+        "tsConfig": "packages/backends/playground/tsconfig.app.json",
+        "assets": ["packages/backends/playground/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "packages/backends/playground/webpack.config.js"
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "backends-playground:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "backends-playground:build:development"
+        },
+        "production": {
+          "buildTarget": "backends-playground:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/backends/playground/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

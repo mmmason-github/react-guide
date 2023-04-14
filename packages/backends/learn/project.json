@@ -8,21 +8,12 @@
     "build": {
       "configurations": {
         "development": { },
-        "production": {
-          "fileReplacements": [
-            {
-              "replace": "packages/backends/learn/src/environments/environment.dev.ts",
-              "with": "packages/backends/learn/src/environments/environment.prod.ts"
-            }
-          ]
-        }
+        "production": { }
       },
       "defaultConfiguration": "production",
       "executor": "@nrwl/webpack:webpack",
       "options": {
-        "assets": [
-          "packages/backends/learn/src/docs/dist"
-        ],
+        "assets": [ ],
         "compiler": "tsc",
         "isolatedConfig": true,
         "main": "packages/backends/learn/src/main.ts",

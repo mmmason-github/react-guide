@@ -25,9 +25,10 @@
 
   // Editor
   "editor.codeActionsOnSave": {
-    "source.fixAll": false,
     "source.fixAll.eslint": true,
-    "source.organizeImports": false
+    "source.fixAll": true,
+    "source.organizeImports": false,
+    "source.sortImports": false
   },
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
@@ -57,9 +58,10 @@
   "files.exclude": {
     "**/.angular": true,
     "**/.git": true,
-    "**/dist/": false,
+    "**/dist/": true,
     "**/messages.xlf": true,
     "**/node_modules/": true,
+    "**/package.json": true,
     "**/package-lock.json": true,
     "**/.idea": true,
 
@@ -78,17 +80,17 @@
     "**/.stylelintignore": true,
     "**/assets": true,
     "**/babel.config.json": true,
-    "**/build": false,
-    "**/environments": false,
+    "**/build": true,
+    "**/docs": true,
+    "**/environments": true,
     "**/favicon.ico": true,
-    "**/index.html": false,
+    "**/index.html": true,
     "**/jest.*": true,
     "**/manifest.webmanifest": true,
     "**/ngsw-config.json": true,
-    "**/package.json": true,
-    "**/project.json": false,
+    "**/project.json": true,
     "**/proxy.conf.json": true,
-    "**/public": false,
+    "**/public": true,
     "**/react-app-env.d.ts": true,
     "**/README.md": true,
     "**/reportWebVitals.ts": true,
@@ -105,6 +107,7 @@
     "**/packages/backends/learn": false,
     "**/packages/backends/natours": true,
     "**/packages/backends/nexter": true,
+    "**/packages/backends/playground": true,
     "**/packages/backends/stumble": true,
     "**/packages/backends/tetris": true,
     "**/packages/backends/tictactoe": true,
@@ -122,9 +125,9 @@
     "**/packages/e2e/frontends/learn": true,
 
     // Frontends
-    "**/packages/frontends/": true,
+    "**/packages/frontends/": false,
     "**/packages/frontends/authenticator": true,
-    "**/packages/frontends/learn": true,
+    "**/packages/frontends/learn": false,
     "**/packages/frontends/natours": true,
     "**/packages/frontends/nexter": true,
     "**/packages/frontends/playground": true,
@@ -136,9 +139,8 @@
     "**/packages/frontends/weather": true,
 
     // Libraries
-    "**/packages/libraries/": true,
-    "**/packages/libraries/models": true,
-    "**/packages/libraries/structures": true
+    "**/packages/data-transfer-objects/": false,
+    "**/packages/structures/": true,
   },
 
   // Explorer

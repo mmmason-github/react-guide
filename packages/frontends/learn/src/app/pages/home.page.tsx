@@ -65,8 +65,8 @@ export default function HomePage(): JSX.Element {
         Learn react concepts
       </h2>
       <AppList apps={apps} />
-      <h4>Test out authentication with a backend</h4>
-      <Link to="/auth">Authentication Page</Link>
+      <h4>Test out login with a backend</h4>
+      <Link to="/login">Login Page</Link>
     </div>
   );
 }

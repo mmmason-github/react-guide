@@ -1,11 +1,8 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable new-cap */
-/* eslint-disable no-useless-constructor */
+/* eslint-disable require-await */
 
 import { Controller } from "@nestjs/common";
 
-import { AuthService } from "../services/auth.service";
-
-@Controller({ path: "/auth" })
-export class AuthController {
-  constructor(private readonly _authService: AuthService) {}
-}
+@Controller({ host: ["localhost"], path: ["/auth"] })
+export class AuthController {}

@@ -3,9 +3,11 @@
     "emitDecoratorMetadata": true,
     "module": "commonjs",
     "outDir": "../../../dist/out-tsc",
+    "strict": true,
     "target": "es2015",
     "types": [
-      "node"
+      "node",
+      "express"
     ]
   },
   "exclude": [
