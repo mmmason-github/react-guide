@@ -4,7 +4,7 @@
 
 ## Backend
 
-- [ ] Authentication
+- [ ] Authentication -> next
 - [ ] Configuration
 - [ ] GraphQL
 - [x] SQLite
