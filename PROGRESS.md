@@ -4,12 +4,12 @@
 
 ## Backend
 
-- [ ] Authentication -> next
-- [ ] Configuration
-- [ ] GraphQL
+- [x] Authentication
+- [x] Configuration
+- [x] GraphQL
 - [x] SQLite
-- [ ] Mongo
-- [ ] Mysql
+- [x] Mongo
+- [x] Mysql
 - [x] Add Jest
 - [x] Add Cypress <br>
 
@@ -21,18 +21,15 @@
 - [x] Fetch
 - [x] Add Jest
 - [x] Add Cypress
-- [ ] Context
-- [ ] Redux <br>
-
-## Library
-
-- [ ] Implement Linked List Datastructure <br>
+- [x] Context
+- [x] Redux <br>
 
 ## Misc
 
 - [x] Implement progress.md
+- [ ] Implement Linked List Datastructure <br>
 
-## Total - (9/18)
+## Total - (17/18)
 
 ## Notes
 
@@ -61,6 +58,8 @@
 > React auth page needs to be revisited
 
 > Learned about request and response -> Working on integrating with typeorm
+
+> Completely refractored everything
 
 #### Tasks ended -
 

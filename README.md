@@ -19,3 +19,5 @@
 ##### Recently start a `progress.md` that marks tasks needed to be done and time of starting them to track my learning progress as well as keeping me focus.
 
 <hr>
+
+##### Note - None of the code is structure or organized, or best practice.. Literally thrown together quick examples for my own personal learning journey! Maybe in later projects will a structure and some organization will emerge..

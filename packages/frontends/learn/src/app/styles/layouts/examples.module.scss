@@ -1,0 +1,23 @@
+main.root {
+  display: grid;
+  grid-column: 1;
+  grid-row: 2;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr max-content;
+  height: 100%;
+  margin: 0 auto;
+  place-items: center;
+  row-gap: 0.25rem;
+  width: 32rem;
+
+  & > footer {
+    text-align: center;
+    width: 100%;
+
+    & > a {
+      color: var(--color);
+      font-size: 1.25rem;
+      width: 100%;
+    }
+  }
+}

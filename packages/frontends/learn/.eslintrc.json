@@ -117,16 +117,7 @@
           "always"
         ],
         "sort-imports": [
-          "error",
-          {
-            "allowSeparatedGroups": true,
-            "memberSyntaxSortOrder": [
-              "none",
-              "all",
-              "multiple",
-              "single"
-            ]
-          }
+          "off"
         ],
         "sort-keys": [
           "error",

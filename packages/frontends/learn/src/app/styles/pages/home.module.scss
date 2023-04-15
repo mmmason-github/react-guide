@@ -1,39 +1,47 @@
-div.root {
+main.root {
   display: grid;
-  grid-auto-rows: max-content;
-  grid-template-columns: max-content;
-  justify-content: center;
-  row-gap: 1rem;
-
-  & > h1 {
-    font-size: 3.5rem;
-    max-width: 30rem;
-    text-align: center;
-  }
+  grid-column: 1;
+  grid-row: 2;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, max-content);
+  height: 100%;
+  margin: 0 auto;
+  place-items: center;
+  row-gap: 0.25rem;
+  width: 32rem;
 
   & > h2 {
-    font-size: 2.5rem;
-    max-width: 30rem;
+    color: var(--color);
+    font-size: 1.75rem;
+    font-weight: 300;
     text-align: center;
     text-decoration: underline;
+    width: 100%;
+
+    &:hover {
+      cursor: default;
+    }
   }
 
-  & > h4 {
-    font-size: 1rem;
-    max-width: 30rem;
-    text-align: center;
-    text-decoration: none;
-    padding-top: 1rem;
-  }
-
-  & > a {
-    color: var(--color);
-    font-size: 1rem;
+  & > ul {
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: 1fr;
+    height: 100%;
+    list-style: none;
     margin: 0 auto;
-    width: max-content;
+    place-items: center;
+    width: 32rem;
 
-    &:before {
-      content: "🚀 ";
+    & > li {
+      & > a {
+        color: var(--color);
+        font-size: 1.5rem;
+
+        &:before {
+          content: "🚀 ";
+        }
+      }
     }
   }
 }

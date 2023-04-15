@@ -32,23 +32,17 @@
 html {
   height: 100%;
   width: 100%;
-}
 
-body {
-  align-content: center;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  height: 100%;
-  justify-content: center;
-  width: 100%;
+  & > body {
+    height: 100%;
+    width: 100%;
 
-  & > div#root {
-    display: grid;
-    grid-column: 1;
-    grid-row: 1;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    padding: 0.25rem;
+    & > div#root {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      height: 100%;
+      width: 100%;
+    }
   }
 }
