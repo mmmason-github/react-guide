@@ -1,0 +1,56 @@
+@import "../TodoPageVariables.scss";
+
+menu.root {
+  background: none;
+  color: var(--dark-text);
+  display: grid;
+  font-size: map-get($todo-menu, font-size);
+  grid-column: 1;
+  grid-row: 1;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  height: max-content;
+  width: 100%;
+  z-index: 1;
+  & > ul {
+    background: var(--dark-bg);
+    border-bottom: calc(map-get($todo-menu, border) / 4) solid
+      map-get($todo-menu, border-color);
+    border-left: 0;
+    border-right: 0;
+    border-top: calc(map-get($todo-menu, border) / 4) solid
+      map-get($todo-menu, border-color);
+    border-bottom-left-radius: calc(
+      map-get($todo-menu, border-radius) - calc(map-get($todo-menu, border) / 2)
+    );
+    border-bottom-right-radius: calc(
+      map-get($todo-menu, border-radius) - calc(map-get($todo-menu, border) / 2)
+    );
+    border-top-left-radius: calc(
+      map-get($todo-menu, border-radius) - calc(map-get($todo-menu, border) / 2)
+    );
+    border-top-right-radius: calc(
+      map-get($todo-menu, border-radius) - calc(map-get($todo-menu, border) / 2)
+    );
+    color: inherit;
+    display: grid;
+    font-size: inherit;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: 1;
+    grid-row: 1;
+    grid-template-rows: 100%;
+    list-style: none;
+    padding: 1rem;
+    & > li {
+      background: inherit;
+      color: inherit;
+      font-size: inherit;
+      text-align: center;
+      & > a {
+        background: inherit;
+        color: inherit;
+        font-size: inherit;
+      }
+    }
+  }
+}

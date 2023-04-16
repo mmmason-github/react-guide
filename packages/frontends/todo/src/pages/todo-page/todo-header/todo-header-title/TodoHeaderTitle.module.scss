@@ -1,0 +1,16 @@
+@import "../../TodoPageVariables.scss";
+
+span {
+  border-bottom-left-radius: calc(
+    map-get($todo-header, border-radius) -
+      calc(map-get($todo-header, border) / 2)
+  );
+  border: calc(map-get($todo-header, border) / 4) solid rgb(227, 227, 227);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-items: center;
+  & > h1 {
+    font-size: map-get($todo-header, font-size);
+  }
+}
