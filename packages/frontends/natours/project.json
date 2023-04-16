@@ -32,6 +32,7 @@
       "executor": "@nrwl/webpack:webpack",
       "options": {
         "assets": [
+          "packages/frontends/natours/src/app/assets",
           "packages/frontends/natours/src/favicon.ico"
         ],
         "baseHref": "/",

@@ -1,0 +1,72 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "backends-ratg",
+  "projectType": "application",
+  "sourceRoot": "packages/backends/ratg/src",
+  "tags": [ ],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": { },
+        "production": { }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [ ],
+        "compiler": "tsc",
+        "isolatedConfig": true,
+        "main": "packages/backends/ratg/src/main.ts",
+        "outputPath": "dist/packages/backends/ratg",
+        "target": "node",
+        "tsConfig": "packages/backends/ratg/tsconfig.app.json",
+        "webpackConfig": "packages/backends/ratg/webpack.config.js"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/backends/ratg/**/*.ts"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "backends-ratg:build:development"
+        },
+        "production": {
+          "buildTarget": "backends-ratg:build:production"
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "backends-ratg:build"
+      }
+    },
+    "test": {
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      },
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/backends/ratg/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ]
+    }
+  }
+}

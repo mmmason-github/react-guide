@@ -54,30 +54,31 @@
   "eslint.enable": true,
   "eslint.format.enable": true,
 
+
   // Excluded
   "files.exclude": {
     "**/.angular": true,
     "**/.git": true,
+    "**/.idea": true,
     "**/dist/": true,
     "**/messages.xlf": true,
     "**/node_modules/": true,
-    "**/package.json": true,
     "**/package-lock.json": true,
-    "**/.idea": true,
+    "**/package.json": true,
 
     // NX
     "**/nx.json": true,
     "**/tools": true,
 
     // Angular / React / Nest
-    ".eslintignore": true,
-    ".eslintrc.json": true,
     "**/.babelrc": true,
     "**/.editorconfig": true,
-    "**/.eslintrc.json": true,
+    "**/.eslintrc.json": false,
     "**/.gitignore": true,
     "**/.prettier*": true,
     "**/.stylelintignore": true,
+    "**/PROGRESS.md": false,
+    "**/README.md": false,
     "**/assets": true,
     "**/babel.config.json": true,
     "**/build": true,
@@ -92,22 +93,24 @@
     "**/proxy.conf.json": true,
     "**/public": true,
     "**/react-app-env.d.ts": true,
-    "**/README.md": false,
     "**/reportWebVitals.ts": true,
     "**/setupTests.ts": true,
     "**/test-setup.ts": true,
     "**/tsconfig.*": true,
     "**/webpack.config.js": true,
+    ".eslintignore": true,
+    ".eslintrc.json": true,
 
     // Current Projects
 
     // Backends
-    "**/packages/backends/": false,
+    "**/packages/backends/": true,
     "**/packages/backends/authenticator": true,
-    "**/packages/backends/learn": false,
+    "**/packages/backends/learn": true,
     "**/packages/backends/natours": true,
     "**/packages/backends/nexter": true,
     "**/packages/backends/playground": true,
+    "**/packages/backends/ratg": true,
     "**/packages/backends/stumble": true,
     "**/packages/backends/tetris": true,
     "**/packages/backends/tictactoe": true,
@@ -123,14 +126,16 @@
 
     // E2E Frontends
     "**/packages/e2e/frontends/learn": true,
+    "**/packages/e2e/frontends/rath": true,
 
     // Frontends
     "**/packages/frontends/": false,
     "**/packages/frontends/authenticator": true,
-    "**/packages/frontends/learn": false,
+    "**/packages/frontends/learn": true,
     "**/packages/frontends/natours": true,
     "**/packages/frontends/nexter": true,
     "**/packages/frontends/playground": true,
+    "**/packages/frontends/ratg": false,
     "**/packages/frontends/stumble": true,
     "**/packages/frontends/tetris": true,
     "**/packages/frontends/tictactoe": true,
@@ -141,6 +146,9 @@
     // Libraries
     "**/packages/data-transfer-objects/": false,
     "**/packages/structures/": true,
+
+    // Placeholder
+    "**/home": true
   },
 
   // Explorer
@@ -153,7 +161,7 @@
 
   // Formatter CSS
   "[css]": {
-    "editor.defaultFormatter": "vscode.css-language-features",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80
   },
@@ -202,7 +210,7 @@
 
   // Formatter SCSS
   "[scss]": {
-    "editor.defaultFormatter": "vscode.css-language-features",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80
   },
@@ -353,7 +361,7 @@
   "scss.lint.hexColorLength": "error",
   "scss.lint.idSelector": "ignore",
   "scss.lint.ieHack": "error",
-  "scss.lint.importStatement": "error",
+  "scss.lint.importStatement": "ignore",
   "scss.lint.important": "error",
   "scss.lint.propertyIgnoredDueToDisplay": "error",
   "scss.lint.universalSelector": "ignore",

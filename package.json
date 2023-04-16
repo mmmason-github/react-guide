@@ -78,6 +78,8 @@
     "babel-jest": "^29.4.1",
     "cypress": "^12.2.0",
     "eslint": "^8.38.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-hardcore": "^35.1.0",
     "eslint-config-next": "13.1.1",
     "eslint-config-prettier": "^8.1.0",
@@ -124,20 +126,20 @@
   "name": "react-guide",
   "private": true,
   "scripts": {
-    "authenticator": "nx run-many --target=serve --projects=backends-authenticator, frontends-authenticator",
+    "authenticator": "nx run-many --target=serve --projects=backends-authenticator,frontends-authenticator",
     "build": "nx run-many --target=build --all=true",
     "clean": "rm -rf ./dist/ ./node_modules/",
     "construct": "npm install && npm run build",
     "lint": "nx run-many --target=lint --all=true",
-    "natours": "nx run-many --target=serve --projects=backends-natours, frontends-natours",
-    "nexter": "nx run-many --target=serve --projects=backends-nexter, frontends-nexter",
-    "stumble": "nx run-many --target=serve --projects=backends-stumble, frontends-stumble",
+    "natours": "nx run-many --target=serve --projects=backends-natours,frontends-natours",
+    "nexter": "nx run-many --target=serve --projects=backends-nexter,frontends-nexter",
+    "stumble": "nx run-many --target=serve --projects=backends-stumble,frontends-stumble",
     "test": "nx run-many --target=test --all=true",
-    "tetris": "nx run-many --target=serve --projects=backends-tetris, frontends-tetris",
-    "tictactoe": "nx run-many --target=serve --projects=backends-tictactoe, frontends-tictactoe",
-    "todo": "nx run-many --target=serve --projects=backends-todo, frontends-todo",
-    "trillo": "nx run-many --target=serve --projects=backends-trillo, frontends-trillo",
-    "weather": "nx run-many --target=serve --projects=backends-weather, frontends-weather"
+    "tetris": "nx run-many --target=serve --projects=backends-tetris,frontends-tetris",
+    "tictactoe": "nx run-many --target=serve --projects=backends-tictactoe,frontends-tictactoe",
+    "todo": "nx run-many --target=serve --projects=backends-todo,frontends-todo",
+    "trillo": "nx run-many --target=serve --projects=backends-trillo,frontends-trillo",
+    "weather": "nx run-many --target=serve --projects=backends-weather,frontends-weather"
   },
   "version": "0.0.0"
 }

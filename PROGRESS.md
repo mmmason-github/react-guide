@@ -1,4 +1,4 @@
-# April 12 - 2023 - 9:06pm (Start)
+# April 12 - 2023
 
 # Current project: `Learn`
 
@@ -92,6 +92,45 @@
 - [ ] Tour <br>
 
 ## Total - (0/20)
+
+## Notes
+
+#### Tasks ended -
+
+# April 16 - 2023
+
+# Current project: `RATG`
+
+## Backend
+
+- [ ] Database for Http requests
+
+## Frontend
+
+- [x] Basics & Components
+- [x] State & Events
+- [ ] Rendering Lists & Conditional Content
+- [ ] Styling Components
+- [ ] Debugging Apps
+- [ ] Practice Project
+- [ ] Fragments, Portals, Refs
+- [ ] Side Effects, Reducers, Context API
+- [ ] Food Order App
+- [ ] React Optimization Techniques
+- [ ] Class Components
+- [ ] Sending Http Requests
+- [ ] Custom React Hooks
+- [ ] Forms & User Inputs
+- [ ] Adding Http & Forms to Food Order App
+- [ ] Basics Redux
+- [ ] Advance Redux
+- [ ] Multi-Page SPA
+- [ ] Authentication
+- [ ] Animating
+- [ ] Replace Redux with Hooks
+- [ ] Testing <br>
+
+## Total - (1/23)
 
 ## Notes
 

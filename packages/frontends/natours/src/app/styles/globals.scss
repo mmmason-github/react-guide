@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
 *,
 *::after,
 *::before {
@@ -6,75 +8,61 @@
   padding: 0;
 }
 
-:root {
-  // Variables
-  --background: #1e293b;
-  --color: #d0d4fc;
-  --family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --size: 10px;
-  // Global Configs
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-  background-color: var(--background);
-  background: var(--background);
-  color: var(--color);
-  display: grid;
-  font-family: var(--family);
-  font-size: var(--size);
-  font-synthesis: none;
+/*
+COLORS:
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+*/
+
+body {
+  color: #777;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
   font-weight: 400;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  height: 100%;
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
-  width: 100%;
-  z-index: 0;
+  line-height: 1.7;
+  padding: 30px;
 }
 
-html {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-  background-color: var(--background);
-  background: var(--background);
-  color: var(--color);
-  display: grid;
-  font-family: var(--family);
-  font-size: var(--size);
-  font-synthesis: none;
-  font-weight: 400;
-  grid-column: 1;
-  grid-row: 1;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  height: 100%;
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
-  width: 100%;
-  z-index: 0;
+.header {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 131, 0.8)
+    ),
+    url(../assets/hero.jpg);
+  background-position: top;
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  height: 95vh;
+  position: relative;
+}
 
-  & > body {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
-    background-color: var(--background);
-    background: var(--background);
-    color: var(--color);
-    display: grid;
-    font-family: var(--family);
-    font-size: var(--size);
-    font-synthesis: none;
-    font-weight: 400;
-    grid-column: 1;
-    grid-row: 1;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    height: 100%;
-    line-height: 1.5;
-    text-rendering: optimizeLegibility;
-    width: 100%;
-    z-index: 0;
-  }
+.logo-box {
+  left: 40px;
+  position: absolute;
+  top: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.heading-primary {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
 }
