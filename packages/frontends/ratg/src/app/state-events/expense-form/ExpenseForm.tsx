@@ -38,7 +38,7 @@ export function ExpenseForm({ onSaveExpenseData }: ExpenseFormProps) {
     setUserInput(
       (prevState): FormValues => ({
         ...prevState,
-        amount: event.target.value
+        amount: event.currentTarget.value
       })
     );
   };
@@ -47,7 +47,7 @@ export function ExpenseForm({ onSaveExpenseData }: ExpenseFormProps) {
     setUserInput(
       (prevState): FormValues => ({
         ...prevState,
-        date: event.target.value
+        date: event.currentTarget.value
       })
     );
   };
@@ -56,7 +56,7 @@ export function ExpenseForm({ onSaveExpenseData }: ExpenseFormProps) {
     setUserInput(
       (prevState): FormValues => ({
         ...prevState,
-        title: event.target.value
+        title: event.currentTarget.value
       })
     );
   };

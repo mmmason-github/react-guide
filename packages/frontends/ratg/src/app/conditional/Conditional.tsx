@@ -1,9 +1,11 @@
+import { useState } from "react";
+
 import "./Conditional.css";
-import Expenses from "./expense/Expenses";
+import Expenses from "./expenses/Expenses";
 import NewExpense from "./new-expense/NewExpense";
 
 export function ConditionalPage() {
-  const expenses: Expenses[] = [
+  const [expenses, setExpenses] = useState<Expenses[]>([
     {
       amount: 94.12,
       date: new Date(2020, 7, 14),
@@ -28,11 +30,17 @@ export function ConditionalPage() {
       id: `e${Math.floor(Math.random() * 30000)}`,
       title: "New Desk (Wooden)"
     }
-  ];
+  ]);
+
+  const onAddExpense = (expense: Expenses) => {
+    setExpenses((prevState) => {
+      return [expense, ...prevState];
+    });
+  };
 
   return (
     <>
-      <NewExpense />
+      <NewExpense onAddExpense={onAddExpense} />
       <Expenses expenses={expenses} />
     </>
   );

@@ -73,17 +73,17 @@
     // Angular / React / Nest
     "**/.babelrc": true,
     "**/.editorconfig": true,
-    "**/.eslintrc.json": false,
+    "**/.eslintrc.json": true,
     "**/.gitignore": true,
     "**/.prettier*": true,
     "**/.stylelintignore": true,
-    "**/PROGRESS.md": false,
-    "**/README.md": false,
+    "**/PROGRESS.md": true,
+    "**/README.md": true,
     "**/assets": true,
     "**/babel.config.json": true,
     "**/build": true,
     "**/docs": true,
-    "**/environments": true,
+    "**/environments": false,
     "**/favicon.ico": true,
     "**/index.html": true,
     "**/jest.*": true,
@@ -126,7 +126,7 @@
 
     // E2E Frontends
     "**/packages/e2e/frontends/learn": true,
-    "**/packages/e2e/frontends/rath": true,
+    "**/packages/e2e/frontends/ratg": true,
 
     // Frontends
     "**/packages/frontends/": false,
@@ -135,20 +135,17 @@
     "**/packages/frontends/natours": true,
     "**/packages/frontends/nexter": true,
     "**/packages/frontends/playground": true,
-    "**/packages/frontends/ratg": false,
+    "**/packages/frontends/ratg": true,
     "**/packages/frontends/stumble": true,
     "**/packages/frontends/tetris": true,
     "**/packages/frontends/tictactoe": true,
-    "**/packages/frontends/todo": true,
+    "**/packages/frontends/todo": false,
     "**/packages/frontends/trillo": true,
     "**/packages/frontends/weather": true,
 
     // Libraries
     "**/packages/data-transfer-objects/": false,
-    "**/packages/structures/": true,
-
-    // Placeholder
-    "**/home": true
+    "**/packages/structures/": true
   },
 
   // Explorer

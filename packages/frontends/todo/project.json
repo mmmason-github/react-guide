@@ -42,7 +42,7 @@
         "outputPath": "dist/packages/frontends/todo",
         "scripts": [ ],
         "styles": [
-          "packages/frontends/todo/src/globals.scss"
+          "packages/frontends/todo/src/styles/globals.scss"
         ],
         "tsConfig": "packages/frontends/todo/tsconfig.app.json",
         "webpackConfig": "packages/frontends/todo/webpack.config.js"

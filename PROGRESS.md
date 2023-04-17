@@ -103,13 +103,13 @@
 
 ## Backend
 
-- [ ] Database for Http requests
+- [ ] Database for Http requests <br>
 
 ## Frontend
 
 - [x] Basics & Components
 - [x] State & Events
-- [ ] Rendering Lists & Conditional Content
+- [x] Rendering Lists & Conditional Content
 - [ ] Styling Components
 - [ ] Debugging Apps
 - [ ] Practice Project
@@ -130,7 +130,40 @@
 - [ ] Replace Redux with Hooks
 - [ ] Testing <br>
 
-## Total - (1/23)
+## Total - (7/23)
+
+## Notes
+
+#### Tasks ended -
+
+# April 17 - 2023
+
+# Current project: `Todo`
+
+## Backend
+
+- [ ] Api for tasks
+- [ ] <br>
+
+## Frontend
+
+- [ ] Layout
+- [ ] Header
+- [ ] Header Title
+- [ ] Header Button
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ]
+- [ ] <br>
+
+## Misc
+
+- [ ] Implement Tree Datastructure <br>
+
+## Total - (0/?)
 
 ## Notes
 

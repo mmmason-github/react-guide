@@ -1,0 +1,22 @@
+:root {
+  // Application
+  --app-bg: #1e293b;
+  --app-font: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --app-footer-size: 2rem;
+  --app-header-size: 5rem;
+  --app-scale: 1;
+  --app-size: 10px;
+  --app-text: #d0d4fc;
+  --app-row-gap: 0.25rem;
+
+  // Page
+  --page-border-radius: 0.25rem;
+  --page-border: 0.1rem;
+  --page-menu-button: 5rem;
+  --page-menu-svg: 3.2rem;
+  --page-nav-row-gap: 0.25rem;
+  --page-main-row-position: 2 / 4;
+  --page-footer-font-size: 1.25rem;
+  --page-nav-menu-padding: 1rem;
+  --page-menu-margin: 0.25rem;
+}

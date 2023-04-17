@@ -1,0 +1,159 @@
+@import "./variables.scss";
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  background: var(--app-bg);
+  box-sizing: border-box;
+  color: var(--app-text);
+  display: grid;
+  font-family: var(--app-text);
+  font-size: var(--app-size);
+  font-synthesis: none;
+  font-weight: 400;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 100%;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  width: 100%;
+  z-index: 0;
+  & > body {
+    -moz-osx-font-smoothing: inherit;
+    -webkit-font-smoothing: inherit;
+    -webkit-text-size-adjust: inherit;
+    background: inherit;
+    color: inherit;
+    box-sizing: inherit;
+    display: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-synthesis: inherit;
+    font-weight: inherit;
+    grid-template-columns: inherit;
+    grid-template-rows: inherit;
+    line-height: inherit;
+    margin: inherit;
+    padding: inherit;
+    text-rendering: inherit;
+    z-index: inherit;
+    & > div#root {
+      -moz-osx-font-smoothing: inherit;
+      -webkit-font-smoothing: inherit;
+      -webkit-text-size-adjust: inherit;
+      background: black;
+      box-sizing: inherit;
+      color: inherit;
+      display: inherit;
+      font-family: inherit;
+      font-size: inherit;
+      font-synthesis: inherit;
+      font-weight: inherit;
+      grid-template-rows: var(--app-header-size) max-content 1fr var(
+          --app-footer-size
+        );
+      grid-template-columns: inherit;
+      line-height: inherit;
+      margin: inherit;
+      padding: inherit;
+      text-rendering: inherit;
+      row-gap: var(--app-row-gap);
+      z-index: inherit;
+    }
+  }
+}
+
+a {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.6rem * var(--app-scale));
+}
+button {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.6rem * var(--app-scale));
+}
+div {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.6rem * var(--app-scale));
+}
+form {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.6rem * var(--app-scale));
+}
+h1 {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(3.2rem * var(--app-scale));
+}
+h2 {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(2.4rem * var(--app-scale));
+}
+h3 {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.872rem * var(--app-scale));
+}
+h4 {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.6rem * var(--app-scale));
+}
+h5 {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.328rem * var(--app-scale));
+}
+h6 {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.072rem * var(--app-scale));
+}
+input {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.6rem * var(--app-scale));
+}
+label {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.6rem * var(--app-scale));
+}
+li {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.6rem * var(--app-scale));
+}
+ol {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.6rem * var(--app-scale));
+}
+p {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.6rem * var(--app-scale));
+}
+section {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.6rem * var(--app-scale));
+}
+span {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.6rem * var(--app-scale));
+}
+ul {
+  background: var(--app-bg);
+  color: var(--app-text);
+  font-size: calc(1.6rem * var(--app-scale));
+  list-style: none;
+}
