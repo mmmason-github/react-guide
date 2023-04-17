@@ -1,0 +1,10 @@
+h1.root {
+  border-bottom-left-radius: var(--page-border-radius);
+  border-bottom: var(--page-border) solid var(--app-text);
+  border-right: var(--page-border) solid var(--app-text);
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}

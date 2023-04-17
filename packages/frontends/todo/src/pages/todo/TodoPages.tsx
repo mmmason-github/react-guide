@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Pages from "../Pages";
-import Styles from "./Todo.module.scss";
+import Styles from "./TodoPages.module.scss";
 
 type TodoPagesProps = {
   // eslint-disable-next-line

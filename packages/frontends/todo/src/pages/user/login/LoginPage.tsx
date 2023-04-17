@@ -1,4 +1,4 @@
-import Pages from "../Pages";
+import Pages from "../../Pages";
 import Styles from "./LoginPage.module.scss";
 
 export function LoginPage() {

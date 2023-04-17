@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { StrictMode } from "react";
 
 import HomePage from "./pages/home/HomePage";
-import LoginPage from "./pages/login/LoginPage";
-import RegisterPage from "./pages/register/RegisterPage";
+import LoginPage from "./pages/user/login/LoginPage";
+import RegisterPage from "./pages/user/register/RegisterPage";
 import TodoAddPage from "./pages/todo/add/TodoAdd";
 import TodoDeletePage from "./pages/todo/delete/TodoDelete";
 import TodoEditPage from "./pages/todo/edit/TodoEdit";

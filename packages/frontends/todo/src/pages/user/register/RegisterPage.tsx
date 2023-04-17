@@ -1,4 +1,4 @@
-import Pages from "../Pages";
+import { Pages } from "../../Pages";
 import Styles from "./RegisterPage.module.scss";
 
 export function RegisterPage() {

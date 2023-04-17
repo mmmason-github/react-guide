@@ -4,92 +4,6 @@ header.root {
   grid-template-rows: 1fr;
   grid-column: 1;
   grid-row: 1 / 3;
-  & > nav {
-    display: grid;
-    grid-template-columns: 1fr var(--app-header-size);
-    grid-template-rows: var(--app-header-size) max-content;
-    grid-column: 1;
-    grid-row: 1 / -1;
-    row-gap: var(--page-nav-row-gap);
-    & > h1 {
-      border-bottom-left-radius: var(--page-border-radius);
-      border-bottom: var(--page-border) solid var(--app-text);
-      border-right: var(--page-border) solid var(--app-text);
-      grid-column: 1;
-      grid-row: 1;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    & > button {
-      align-content: center;
-      border-bottom-right-radius: var(--page-border-radius);
-      border-bottom: var(--page-border) solid var(--app-text);
-      border-left: 0;
-      border-right: 0;
-      border-top: 0;
-      display: grid;
-      grid-column: 2;
-      grid-row: 1;
-      grid-template-columns: var(--page-menu-svg);
-      grid-template-rows: var(--page-menu-svg);
-      justify-content: center;
-      margin: 0;
-      outline: 0;
-      padding: 0;
-      & > svg {
-        grid-column: 1;
-        grid-row: 1;
-        height: 100%;
-        width: 100%;
-        &:hover {
-          cursor: pointer;
-        }
-      }
-    }
-    & > menu {
-      background: black;
-      border-radius: var(--page-border-radius);
-      border-bottom: var(--page-border) solid var(--app-text);
-      border-top: var(--page-border) solid var(--app-text);
-      display: grid;
-      margin: 0 var(--page-menu-margin);
-      grid-auto-rows: 1fr;
-      grid-column: 1 / -1;
-      grid-row: 2;
-      grid-template-columns: 1fr;
-      padding: 0;
-      & > ul {
-        border-radius: var(--page-border-radius);
-        display: grid;
-        grid-auto-columns: 1fr;
-        grid-template-rows: repeat(2, max-content);
-        list-style: none;
-        margin: 0;
-        padding: calc(var(--page-nav-menu-padding)) 0;
-        place-items: center;
-        &:nth-of-type(1) {
-          grid-column: 1;
-          grid-row: 1;
-          z-index: 2;
-        }
-        &:nth-of-type(2) {
-          border-top-left-radius: 0;
-          border-top-right-radius: 0;
-          grid-column: 1;
-          grid-row: 2;
-          margin-top: calc(-1 * var(--page-border-radius));
-          z-index: 1;
-        }
-        & > li {
-          grid-row: 1;
-          & > a {
-            // Free
-          }
-        }
-      }
-    }
-  }
 }
 
 main.root {
@@ -109,10 +23,4 @@ footer.root {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
   place-items: center;
-  & > section {
-    font-size: calc(var(--page-footer-font-size) * var(--app-scale));
-    & > span {
-      font-size: calc(var(--page-footer-font-size) * var(--app-scale));
-    }
-  }
 }

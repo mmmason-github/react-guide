@@ -1,0 +1,6 @@
+section.root {
+  font-size: calc(var(--page-footer-font-size) * var(--app-scale));
+  & > span {
+    font-size: calc(var(--page-footer-font-size) * var(--app-scale));
+  }
+}
