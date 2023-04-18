@@ -1,0 +1,74 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "backends-sociopedia",
+  "projectType": "application",
+  "sourceRoot": "packages/backends/sociopedia/src",
+  "tags": [ ],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": { },
+        "production": { }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [
+          "packages/backends/sociopedia/src/assets"
+        ],
+        "compiler": "tsc",
+        "isolatedConfig": true,
+        "main": "packages/backends/sociopedia/src/main.ts",
+        "outputPath": "dist/packages/backends/sociopedia",
+        "target": "node",
+        "tsConfig": "packages/backends/sociopedia/tsconfig.app.json",
+        "webpackConfig": "packages/backends/sociopedia/webpack.config.js"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/backends/sociopedia/**/*.ts"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "backends-sociopedia:build:development"
+        },
+        "production": {
+          "buildTarget": "backends-sociopedia:build:production"
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/js:node",
+      "options": {
+        "buildTarget": "backends-sociopedia:build"
+      }
+    },
+    "test": {
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      },
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/backends/sociopedia/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ]
+    }
+  }
+}

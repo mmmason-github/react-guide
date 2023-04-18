@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  div#root {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 32rem;
+    padding: 4rem;
+  }
+}

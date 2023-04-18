@@ -79,7 +79,7 @@
     "**/.stylelintignore": true,
     "**/PROGRESS.md": true,
     "**/README.md": true,
-    "**/assets": true,
+    "**/assets": false,
     "**/babel.config.json": true,
     "**/build": true,
     "**/docs": true,
@@ -104,8 +104,8 @@
     // Current Projects
 
     // Backends
-    "**/packages/backends/": true,
-    "**/packages/backends/authenticator": true,
+    "**/packages/backends/": false,
+    "**/packages/backends/authenticator": false,
     "**/packages/backends/learn": true,
     "**/packages/backends/natours": true,
     "**/packages/backends/nexter": true,
@@ -113,6 +113,7 @@
     "**/packages/backends/ratg": true,
     "**/packages/backends/stumble": true,
     "**/packages/backends/tetris": true,
+    "**/packages/backends/sociopedia": true,
     "**/packages/backends/tictactoe": true,
     "**/packages/backends/todo": true,
     "**/packages/backends/trillo": true,
@@ -130,16 +131,18 @@
 
     // Frontends
     "**/packages/frontends/": false,
-    "**/packages/frontends/authenticator": true,
+    "**/packages/frontends/authenticator": false,
     "**/packages/frontends/learn": true,
     "**/packages/frontends/natours": true,
     "**/packages/frontends/nexter": true,
     "**/packages/frontends/playground": true,
+    "**/packages/frontends/sociopedia": true,
     "**/packages/frontends/ratg": true,
     "**/packages/frontends/stumble": true,
     "**/packages/frontends/tetris": true,
     "**/packages/frontends/tictactoe": true,
-    "**/packages/frontends/todo": false,
+    "**/packages/frontends/mui": false,
+    "**/packages/frontends/todo": true,
     "**/packages/frontends/trillo": true,
     "**/packages/frontends/weather": true,
 

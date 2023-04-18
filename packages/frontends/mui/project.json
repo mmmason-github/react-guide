@@ -1,0 +1,106 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "frontends-mui",
+  "projectType": "application",
+  "sourceRoot": "packages/frontends/mui/src",
+  "tags": [ ],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "extractLicenses": true,
+          "fileReplacements": [
+            {
+              "replace": "packages/frontends/mui/src/environments/environment.ts",
+              "with": "packages/frontends/mui/src/environments/environment.prod.ts"
+            }
+          ],
+          "namedChunks": false,
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "vendorChunk": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [
+          "packages/frontends/mui/src/favicon.ico",
+          "packages/frontends/mui/src/assets"
+        ],
+        "baseHref": "/",
+        "compiler": "babel",
+        "index": "packages/frontends/mui/src/index.html",
+        "isolatedConfig": true,
+        "main": "packages/frontends/mui/src/main.tsx",
+        "outputPath": "dist/packages/frontends/mui",
+        "scripts": [ ],
+        "styles": [
+          "packages/frontends/mui/src/styles/globals.scss"
+        ],
+        "tsConfig": "packages/frontends/mui/tsconfig.app.json",
+        "webpackConfig": "packages/frontends/mui/webpack.config.js"
+      },
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontends/mui/**/*.{ts,tsx,js,jsx}"
+        ]
+      },
+      "outputs": [
+        "{options.outputFile}"
+      ]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "frontends-mui:build:development"
+        },
+        "production": {
+          "buildTarget": "frontends-mui:build:production",
+          "hmr": false
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/webpack:dev-server",
+      "options": {
+        "buildTarget": "frontends-mui:build",
+        "hmr": true
+      }
+    },
+    "serve-static": {
+      "executor": "@nrwl/web:file-server",
+      "options": {
+        "buildTarget": "frontends-mui:build"
+      }
+    },
+    "test": {
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      },
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/frontends/mui/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ]
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "name": "frontends-sociopedia",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "packages/frontends/sociopedia/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "extractLicenses": true,
+          "fileReplacements": [
+            {
+              "replace": "packages/frontends/sociopedia/src/environments/environment.dev.ts",
+              "with": "packages/frontends/sociopedia/src/environments/environment.prod.ts"
+            }
+          ],
+          "namedChunks": false,
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "vendorChunk": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "executor": "@nrwl/webpack:webpack",
+      "options": {
+        "assets": [
+          "packages/frontends/sociopedia/src/favicon.ico",
+          "packages/frontends/sociopedia/src/assets"
+        ],
+        "baseHref": "/",
+        "compiler": "babel",
+        "index": "packages/frontends/sociopedia/src/index.html",
+        "isolatedConfig": true,
+        "main": "packages/frontends/sociopedia/src/main.tsx",
+        "outputPath": "dist/packages/frontends/sociopedia",
+        "scripts": [],
+        "styles": ["packages/frontends/sociopedia/src/styles/globals.scss"],
+        "tsConfig": "packages/frontends/sociopedia/tsconfig.app.json",
+        "webpackConfig": "packages/frontends/sociopedia/webpack.config.js"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "packages/frontends/sociopedia/**/*.{ts,tsx,js,jsx}"
+        ]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "serve": {
+      "configurations": {
+        "development": {
+          "buildTarget": "frontends-sociopedia:build:development"
+        },
+        "production": {
+          "buildTarget": "frontends-sociopedia:build:production",
+          "hmr": false
+        }
+      },
+      "defaultConfiguration": "development",
+      "executor": "@nrwl/webpack:dev-server",
+      "options": {
+        "buildTarget": "frontends-sociopedia:build",
+        "hmr": true,
+        "proxyConfig": "packages/frontends/sociopedia/proxy.conf.json"
+      }
+    },
+    "test": {
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      },
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "packages/frontends/sociopedia/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
+    }
+  }
+}
